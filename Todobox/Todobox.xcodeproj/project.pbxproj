@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB1390A823EFDE5900D294A8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1390A723EFDE5900D294A8 /* AddViewController.swift */; };
+		EB1390AA23EFE1F000D294A8 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1390A923EFE1F000D294A8 /* DataClass.swift */; };
 		EB221CDC23ED805A00919D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB221CDB23ED805A00919D28 /* AppDelegate.swift */; };
 		EB221CDE23ED805A00919D28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB221CDD23ED805A00919D28 /* SceneDelegate.swift */; };
 		EB221CE023ED805A00919D28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB221CDF23ED805A00919D28 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		EB1390A723EFDE5900D294A8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		EB1390A923EFE1F000D294A8 /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		EB221CD823ED805A00919D28 /* Todobox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todobox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB221CDB23ED805A00919D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB221CDD23ED805A00919D28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				EB221CDF23ED805A00919D28 /* ViewController.swift */,
 				EB1390A723EFDE5900D294A8 /* AddViewController.swift */,
 				EB221CE123ED805A00919D28 /* Main.storyboard */,
+				EB1390A923EFE1F000D294A8 /* DataClass.swift */,
 				EB221CE423ED805B00919D28 /* Assets.xcassets */,
 				EB221CE623ED805B00919D28 /* LaunchScreen.storyboard */,
 				EB221CE923ED805B00919D28 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				EB221CE023ED805A00919D28 /* ViewController.swift in Sources */,
 				EB221CDC23ED805A00919D28 /* AppDelegate.swift in Sources */,
+				EB1390AA23EFE1F000D294A8 /* DataClass.swift in Sources */,
 				EB1390A823EFDE5900D294A8 /* AddViewController.swift in Sources */,
 				EB221CDE23ED805A00919D28 /* SceneDelegate.swift in Sources */,
 			);
