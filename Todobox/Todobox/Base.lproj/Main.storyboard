@@ -56,7 +56,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="TodoList" id="14l-W2-vUT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="aa0-Z3-gYh"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="aa0-Z3-gYh">
+                            <connections>
+                                <action selector="Editbutton:" destination="BYZ-38-t0r" id="MLS-Qb-Q94"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VuR-io-FA6">
                             <connections>
                                 <segue destination="cqu-sp-69f" kind="show" id="BK4-4R-FhP"/>

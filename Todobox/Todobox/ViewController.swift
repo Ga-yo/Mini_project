@@ -10,11 +10,32 @@ import UIKit
 var list = [TodoList]()
 class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
     
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneButtonTap))
+    
+    @IBAction func Editbutton(_ sender: Any) {
+        guard !list.isEmpty else {
+            return
+        }
+        tableview.setEditing(true, animated: true)  // tableview editing 모드
+      
+        
+        self.navigationItem.leftBarButtonItem = doneButton
+
+    }
+    
+    @objc func doneButtonTap(){
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        tableview.setEditing(false, animated: true)
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = list[indexPath.row].title
@@ -43,8 +64,15 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         tableview.delegate = self
         list.append(TodoList(title: "test1", content: "testData1"))
         list.append(TodoList(title: "test2", content: "testData2"))
+        
+        doneButton.style = .plain
+        doneButton.target = self
+
     }
 
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        list.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
 }
 
