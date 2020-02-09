@@ -30,7 +30,10 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         return cell
     }
     
- 
+ override func viewDidAppear(_ animated: Bool) {
+     tableview.reloadData() // didload가 일회성이기 때문에 리로드해야함
+ }
+    
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {

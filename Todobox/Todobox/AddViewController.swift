@@ -10,9 +10,14 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    @IBOutlet weak var textLabel: UITextField!
+     
+     @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
         textView.layer.borderColor = UIColor.gray.cgColor
         textView.layer.borderWidth = 0.3
@@ -25,14 +30,24 @@ class AddViewController: UIViewController {
 
     }
     
-    @IBAction func doneitem(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func doneitem(_ sender: Any) {
         
+        let title = textLabel.text!
+        let content = textView.text ?? ""
+         
+        let item: TodoList = TodoList(title: title, content: content)
+         
+        print("Add List title : \(item.title)")
+                // TodoListViewController에 생성한 전역변수에 append
+        list.append(item)
+
+
+    self.navigationController?.popViewController(animated: true) // 리스트 화면으로 돌아가기
     }
     
-    @IBOutlet weak var textLabel: UITextField!
-    
-    @IBOutlet weak var textView: UITextView!
+
+
+
     /*
     // MARK: - Navigation
 
