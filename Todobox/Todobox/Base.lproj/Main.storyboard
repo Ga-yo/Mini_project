@@ -46,7 +46,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.8922409483188174" green="0.81314110576413845" blue="0.61839352883788112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6RB-NM-uS1" secondAttribute="trailing" id="8jt-dw-ldN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6RB-NM-uS1" secondAttribute="bottom" id="FVn-5p-eqW"/>
@@ -99,7 +99,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93381894096476681" green="0.89395562990480437" blue="0.76077101282803261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qYL-Cq-VDe" firstAttribute="top" secondItem="qbh-og-jtC" secondAttribute="bottom" constant="35" id="6iH-vy-PGt"/>
                             <constraint firstItem="qbh-og-jtC" firstAttribute="top" secondItem="6jf-fn-LLe" secondAttribute="top" constant="35" id="BLk-OH-Mrk"/>
