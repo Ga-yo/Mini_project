@@ -8,10 +8,45 @@
 
 import UIKit
 var list = [TodoList]()
+
+
 class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
     
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneButtonTap))
     
+    func saveAllData() { //data 저장
+            let data = list.map {
+                [
+                    "title": $0.title,
+                    "content": $0.content!,
+                    "isComplete": $0.isComplete
+                ]
+            }
+     
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(data, forKey: "items") // 키, value 설정
+            userDefaults.synchronize()  // 동기화
+        }
+    func loadAllData() {//data 불러오기
+            let userDefaults = UserDefaults.standard
+            guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
+                return
+            }
+     
+            print(data.description)
+     
+            // list 배열에 저장하기
+            print(type(of: data))
+            list = data.map {
+                var title = $0["title"] as? String
+                var content = $0["content"] as? String
+                var isComplete = $0["isComplete"] as? Bool
+     
+                return TodoList(title: title!, content: content!, isComplete: isComplete!)
+            }
+        }
+
+
     @IBAction func Editbutton(_ sender: Any) {
         guard !list.isEmpty else {
             return
@@ -66,6 +101,7 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
     }
     
  override func viewDidAppear(_ animated: Bool) {
+     saveAllData()
      tableview.reloadData() // didload가 일회성이기 때문에 리로드해야함
  }
     
@@ -79,8 +115,12 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         list.append(TodoList(title: "test1", content: "testData1"))
         list.append(TodoList(title: "test2", content: "testData2"))
         
+        loadAllData()
+        
         doneButton.style = .plain
         doneButton.target = self
+        
+        
 
     }
 
