@@ -28,7 +28,21 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         tableview.setEditing(false, animated: true)
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard !list[indexPath.row].isComplete else{
+            return
+        }
+        
+        list[indexPath.row].isComplete = true
+        
+        let dialog = UIAlertController(title: "TodoList", message: "일을 완료했습니다!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        dialog.addAction(action)
+        self.present(dialog, animated: true, completion: nil)
+        
+        tableView.reloadData()
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
