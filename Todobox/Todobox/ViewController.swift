@@ -27,6 +27,7 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
             userDefaults.set(data, forKey: "items") // 키, value 설정
             userDefaults.synchronize()  // 동기화
         }
+    
     func loadAllData() {//data 불러오기
             let userDefaults = UserDefaults.standard
             guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
