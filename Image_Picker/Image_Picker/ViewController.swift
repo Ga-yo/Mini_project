@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var Array: [String] = ["A", "B", "C", "D"]
+    var Array: [String] = ["honey.jpeg", "original.jpeg", "bboring.jpeg"]
     var selectRow = 0
-       
+    var imageArray = [UIImage?]()
+    var name: [String] = ["허니콤보와 엽떡", "엽떡", "뿌링클과 엽떡"]
+    
+    
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var textlabel: UILabel!
-       
+    @IBOutlet weak var imageView:UIImageView!
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -33,9 +36,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
        }
    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-               selectRow = row
-        
-        textlabel.text = Array[selectRow]
+        selectRow = row
+        let image = UIImage(named: Array[selectRow])
+        imageView.image = image
+        textlabel.text = name[selectRow]
     }
     
    
