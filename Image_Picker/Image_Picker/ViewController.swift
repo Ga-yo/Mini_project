@@ -9,32 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    let Max = 4
-    var imageArray = ["honey.jpeg", "original.jpeg", "bboring.jpeg"]
-    var imageArrayfinal = [UIImage?]()
     
+    var Array: [String] = ["A", "B", "C", "D"]
+    var selectRow = 0
+       
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var textlabel: UILabel!
+       
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return Max
-    }//컴포넌트 개수
+        return 1
+    }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return imageArray.count
-    }//피커 뷰 개수
+        return Array.count
+    }
     
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var textlabel: UILabel!
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Array[row]
+    }
     
+   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+           return 1
+       }
+   
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+               selectRow = row
+        
+        textlabel.text = Array[selectRow]
+    }
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        for i in 0 ..< Max{
-            let image = UIImage(named: imageArray[i])
-            imageArrayfinal.append(image)
-        }
-        textlabel.text = imageArray[0]
-        ImageView.image = imageArrayfinal[0]
+        textlabel.text = "None"
     }
 
 
