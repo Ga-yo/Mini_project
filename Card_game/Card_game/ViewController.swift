@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var game: Concentration = Concentration()
     var number: Int = 0
     
     var emoji = ["👻", "🎃", "👻", "🎃"]
