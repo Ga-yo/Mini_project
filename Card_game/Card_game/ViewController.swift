@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: (cardarray.count + 1)/2)
     var number: Int = 0
     
-    private var emojiChoices = ["🦇", "😱", "🙀", "👿", "🎃", "👻", "🍭", "🍬", "🍎"]
+   // private var emojiChoices = ["🦇", "😱", "🙀", "👿", "🎃", "👻", "🍭", "🍬", "🍎"]
+    private var emojiChoices = "🦇😱🙀👿🎃👻🍭🍬🍎"
     
-    private var emoji = [Int:String]()
+    private var emoji = [Card:String]()
     
     @IBAction private func ghost_but(_ sender: UIButton) {
         flipcount()
@@ -43,10 +44,11 @@ class ViewController: UIViewController {
     }
     
     private func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random)
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     @IBOutlet private var cardarray: [UIButton]!
@@ -67,12 +69,12 @@ class ViewController: UIViewController {
 
 extension Int {
     var arc4random: Int {
-        if self > 0{
+        if self > 0 {
             return Int(arc4random_uniform(UInt32(self)))
         }
-        else if self < 0{
+        else if self < 0 {
             return -Int(arc4random_uniform(UInt32(self)))
-        } else if self = 0 {
+        } else {
             return 0
         }
     }
