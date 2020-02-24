@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    lazy var game = Concentration(numberOfPairsOfCards: (cardarray.count + 1)/2)
+    private lazy var game = Concentration(numberOfPairsOfCards: (cardarray.count + 1)/2)
     var number: Int = 0
     
-    var emojiChoices = ["🦇", "😱", "🙀", "👿", "🎃", "👻", "🍭", "🍬", "🍎"]
+    private var emojiChoices = ["🦇", "😱", "🙀", "👿", "🎃", "👻", "🍭", "🍬", "🍎"]
     
-    var emoji = [Int:String]()
+    private var emoji = [Int:String]()
     
-    @IBAction func ghost_but(_ sender: UIButton) {
+    @IBAction private func ghost_but(_ sender: UIButton) {
         flipcount()
         if let cardnumber = cardarray.firstIndex(of:sender){
             game.chooseCard(at: cardnumber)
@@ -42,15 +42,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func emoji(for card: Card) -> String {
+    private func emoji(for card: Card) -> String {
         if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random)
         }
         return emoji[card.identifier] ?? "?"
     }
-     
-    @IBOutlet var cardarray: [UIButton]!
+    
+    @IBOutlet private var cardarray: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +59,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numbercounting: UILabel!
     
-    func flipcount(){
+    private func flipcount(){
         number+=1
         numbercounting.text = "Flip : \(number)"
     }
 }
 
+extension Int {
+    var arc4random: Int {
+        if self > 0{
+            return Int(arc4random_uniform(UInt32(self)))
+        }
+        else if self < 0{
+            return -Int(arc4random_uniform(UInt32(self)))
+        } else if self = 0 {
+            return 0
+        }
+    }
+}
+  
