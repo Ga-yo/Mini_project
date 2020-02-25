@@ -5,47 +5,46 @@
 //  Created by 이가영 on 2020/02/25.
 //  Copyright © 2020 이가영. All rights reserved.
 //
-
 import Foundation
 
-struct  PlayingCard {
-    var suit: suit
-    var rank: rank
+struct PlayingCard: CustomStringConvertible {
+    var description: String { return "\(rank)\(suit)"}
     
-    enum suit: String{
-        case spades = "♠"
-        case heart = "♥"
-        case diamond = "◆"
-        case clubs = "♣"
+    var suit: Suit
+    var rank: Rank
+    
+    enum Suit: String {
+        case spades = "♠️"
+        case hearts = "❤️"
+        case dimonds = "♣️"
+        case clubs = "♦️"
         
-        static var all = [suit.spades,.heart,.diamond,.clubs]
+        static var all = [Suit.spades, .hearts, .dimonds, .clubs]
     }
     
-    enum rank{
+    enum Rank {
         case ace
         case face(String)
-        case numbertic(Int)
+        case numeric(Int)
         
-        
-        var order: Int{
+        var order: Int {
             switch self {
             case .ace: return 1
-            case .numbertic(let pips): return pips
-            case .face(let kind) where kind == "J" return 11
-            case .face(let kind) where kind == "Q" return 12
-            case .face(let kind) where kind == "K" return 13
+            case .numeric(let pips): return pips
+            case .face(let kind) where kind == "J": return 11
+            case .face(let kind) where kind == "Q": return 12
+            case .face(let kind) where kind == "K": return 13
             default: return 0
             }
         }
         
-        static var all: [rank]{
-            var allrank = [rank.ace]
-            for pips in 2...10{
-                allrank.append(rank.numbertic(pips))
-                
+        static var all: [Rank] {
+            var allRanks = [Rank.ace]
+            for pips in 2...10 {
+                allRanks.append(Rank.numeric(pips))
             }
-            allrank=[rank.face("J") , .face("Q"), .face("K")]
-            return allrank
+            allRanks += [Rank.face("J"), .face("Q"), .face("K")]
+            return allRanks
         }
     }
 }
