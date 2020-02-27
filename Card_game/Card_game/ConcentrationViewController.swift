@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
 
     private lazy var game = Concentration(numberOfPairsOfCards: (cardarray.count + 1)/2)
     var number: Int = 0
@@ -29,7 +29,16 @@ class ViewController: UIViewController {
         
     }
     
+    var theme: String?{
+        didSet{
+            emojiChoices = theme ?? ""
+            emoji = [:] //재설정
+            updateviewfrommodel()
+        }
+    }
+    
     func updateviewfrommodel(){
+        if cardarray != nil{
         for index in cardarray.indices{
             let button = cardarray[index]
             let card = game.cards[index]
@@ -41,6 +50,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0): #colorLiteral(red: 0.7121074796, green: 0.5914553404, blue: 1, alpha: 1)
             }
         }
+    }
     }
     
     private func emoji(for card: Card) -> String {
