@@ -28,13 +28,11 @@ class LoginViewController: UIViewController {
         guard let loginpw = password.text else {return}
         
         if Userlogin.checkinfo(email: loginemail, pw: loginpw) == true{
-//            let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
-//            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-//
-//            alert.addAction(okAction)
-//            present(alert, animated: false, completion: nil)
-            let uvc = self.storyboard!.instantiateViewController(withIdentifier: "Navigation")
-            self.present(uvc, animated: true, completion: nil)
+            let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
         }else{
             let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
             let noAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)

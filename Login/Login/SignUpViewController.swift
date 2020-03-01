@@ -28,7 +28,6 @@ class SignUpViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             alerts.addAction(okAction)
             present(alerts, animated: false, completion: nil)
-            
         }else{
             let alertf = UIAlertController(title: "이런!", message: "회원가입에 실패하셨습니다.", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
