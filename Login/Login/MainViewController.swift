@@ -12,12 +12,10 @@ var name = UserInfo()
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var Nametext: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        Nametext.text = UserDefaults.standard.object(forKey: "UserList") as? String
+        //Nametext.text = UserDefaults.standard.value(forKey: "CustomKey") as! String // Load
     }
     
 

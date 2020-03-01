@@ -22,12 +22,8 @@ class SignUpViewController: UIViewController {
         guard let userP = passwordtext.text else {return}
         guard let userC = doublecheck.text else {return}
         
-        
-        
-        if userP == userC{
-          let userData: String = userN
-            UserDefaults.standard.set(userData, forKey: "UserList")
-            
+        //비밀번호와 재확인 text가 같다면 alert띄우기
+        if userP == userC {
             let alerts = UIAlertController(title: "축하드립니다.", message: "\(userN)님 회원가입에 성공하셨습니다.", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             alerts.addAction(okAction)
@@ -40,6 +36,7 @@ class SignUpViewController: UIViewController {
             alertf.addAction(okAction)
             present(alertf, animated: false, completion: nil)
         }
+        //구조체 User의 정보를 추가하는 함수 호출
         User.addUser(name: userN, email: userE, password: userP)
         
     }

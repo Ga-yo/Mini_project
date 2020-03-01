@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
 //
 //            alert.addAction(okAction)
 //            present(alert, animated: false, completion: nil)
+            let uvc = self.storyboard!.instantiateViewController(withIdentifier: "Navigation")
+            self.present(uvc, animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
             let noAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
@@ -41,8 +43,7 @@ class LoginViewController: UIViewController {
             present(alert, animated: false, completion: nil)
         }
        
-        let uvc = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController")
-        self.present(uvc, animated: true, completion: nil)
+        
     }
     
     /*
