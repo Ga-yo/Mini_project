@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Firebase
+
 var User = UserInfo()
 class SignUpViewController: UIViewController {
-    
-  
     @IBOutlet weak var Nametext: UITextField!
     @IBOutlet weak var emailtext: UITextField!
     @IBOutlet weak var passwordtext: UITextField!
     @IBOutlet weak var doublecheck: UITextField!
+    @IBOutlet weak var pwcheck: UIButton!
     
-    @IBAction func Signinbut(_ sender: UIButton) {
+    @IBAction func pwcheck(_ sender: UIButton) {
         guard let userN = Nametext.text else {return}
         guard let userE = emailtext.text else {return}
         guard let userP = passwordtext.text else {return}
@@ -24,19 +25,40 @@ class SignUpViewController: UIViewController {
         
         //비밀번호와 재확인 text가 같다면 alert띄우기
         if userP == userC {
-            let alerts = UIAlertController(title: "축하드립니다.", message: "\(userN)님 회원가입에 성공하셨습니다.", preferredStyle: UIAlertController.Style.alert)
+            let alerts = UIAlertController(title: "성공", message: "비밀번호 확인 성공", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             alerts.addAction(okAction)
             present(alerts, animated: false, completion: nil)
         }else{
-            let alertf = UIAlertController(title: "이런!", message: "회원가입에 실패하셨습니다.", preferredStyle: UIAlertController.Style.alert)
+            let alertf = UIAlertController(title: "이런!", message: "다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             
             alertf.addAction(okAction)
             present(alertf, animated: false, completion: nil)
         }
-        //구조체 User의 정보를 추가하는 함수 호출
         User.addUser(name: userN, email: userE, password: userP)
+    }
+    
+    
+    @IBAction func Signinbut(_ sender: UIButton) {
+        //비밀번호와 재확인 text가 같다면 alert띄우기
+        Auth.auth().createUser(withEmail: emailtext.text!, password: passwordtext.text!
+                ) { (user, error) in
+                    if user !=  nil{
+                        let alertss = UIAlertController(title: "축하드립니다", message: "회원가입 성공", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                        alertss.addAction(okAction)
+                        self.present(alertss, animated: false, completion: nil)
+                    }
+                    else{
+                        let alertff = UIAlertController(title: "이런!", message: "다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                        
+                        alertff.addAction(okAction)
+                        self.present(alertff, animated: false, completion: nil)
+                    }
+                }
+        //구조체 User의 정보를 추가하는 함수 호출
         
     }
     

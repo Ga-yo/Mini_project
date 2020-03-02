@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var Userlogin = UserInfo()
 
@@ -16,30 +17,59 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let user = Auth.auth().currentUser{
+            email.placeholder = "이미 로그인 된 상태입니다."
+            password.placeholder = "이미 로그인 된 상태입니다."
+            present(MainViewController(), animated: true, completion: nil)
+        }
     }
     
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var checkbutton: UIButton!
     
     @IBAction func Check(_ sender: Any) {
         guard let loginemail = email.text else {return}
         guard let loginpw = password.text else {return}
-        
-        if Userlogin.checkinfo(email: loginemail, pw: loginpw) == true{
-            let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        Auth.auth().signIn(withEmail: loginemail, password: loginpw) { (user, error) in
 
-            alert.addAction(okAction)
-            present(alert, animated: false, completion: nil)
-        }else{
-            let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
-            let noAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+//            if checkbutton.setTitle("로그아웃", for: .normal){
+//
+//            }
+            if user != nil{
+                        let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                        
+                            alert.addAction(okAction)
+                self.present(alert, animated: false, completion: nil)
+                
+                    }
+
+                    else{
+                let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
+                            let noAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                
+                            alert.addAction(noAction)
+                self.present(alert, animated: false, completion: nil)
+                    }
             
-            alert.addAction(noAction)
-            present(alert, animated: false, completion: nil)
-        }
+
+              }
+
+//        if Userlogin.checkinfo(email: loginemail, pw: loginpw) == true{
+//            let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
+//            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+//
+//            alert.addAction(okAction)
+//            present(alert, animated: false, completion: nil)
+//        }else{
+//            let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
+//            let noAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+//
+//            alert.addAction(noAction)
+//            present(alert, animated: false, completion: nil)
+//        }
        
         
     }
