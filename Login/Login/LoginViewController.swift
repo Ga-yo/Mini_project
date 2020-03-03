@@ -16,11 +16,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let user = Auth.auth().currentUser{
+        
+        if Auth.auth().currentUser != nil{
             email.placeholder = "이미 로그인 된 상태입니다."
             password.placeholder = "이미 로그인 된 상태입니다."
-            present(MainViewController(), animated: true, completion: nil)
         }
     }
     
@@ -56,12 +55,13 @@ class LoginViewController: UIViewController {
             
 
               }
+       
 
 //        if Userlogin.checkinfo(email: loginemail, pw: loginpw) == true{
 //            let alert = UIAlertController(title: "알림", message: "로그인 성공", preferredStyle: UIAlertController.Style.alert)
 //            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
 //
-//            alert.addAction(okAction)
+//            alert.addAction(okActiron)
 //            present(alert, animated: false, completion: nil)
 //        }else{
 //            let alert = UIAlertController(title: "알림", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
@@ -83,5 +83,5 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

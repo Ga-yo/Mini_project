@@ -10,7 +10,6 @@ import Foundation
 
 class UserInfo{
     
-    var ref : DatabaseReference!
     
     struct User {
         let Name: String

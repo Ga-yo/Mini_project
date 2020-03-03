@@ -18,8 +18,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var pwcheck: UIButton!
     
     @IBAction func pwcheck(_ sender: UIButton) {
-        guard let userN = Nametext.text else {return}
-        guard let userE = emailtext.text else {return}
         guard let userP = passwordtext.text else {return}
         guard let userC = doublecheck.text else {return}
         
@@ -30,13 +28,12 @@ class SignUpViewController: UIViewController {
             alerts.addAction(okAction)
             present(alerts, animated: false, completion: nil)
         }else{
-            let alertf = UIAlertController(title: "이런!", message: "다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+            let alertf = UIAlertController(title: "이런!", message: "다시 시도해주세요.1", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             
             alertf.addAction(okAction)
             present(alertf, animated: false, completion: nil)
         }
-        User.addUser(name: userN, email: userE, password: userP)
     }
     
     
@@ -51,7 +48,7 @@ class SignUpViewController: UIViewController {
                         self.present(alertss, animated: false, completion: nil)
                     }
                     else{
-                        let alertff = UIAlertController(title: "이런!", message: "다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+                        let alertff = UIAlertController(title: "이런!", message: "다시 시도해주세요.2", preferredStyle: UIAlertController.Style.alert)
                         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                         
                         alertff.addAction(okAction)
