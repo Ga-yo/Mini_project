@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
         //비밀번호와 재확인 text가 같다면 alert띄우기
         if userP == userC {
             return true
-        }else{
+        } else {
             // 대부분의 enum타입은 Swift의 타입추론을 통해 UIAlertController.Style.alert -> .alert 이런식으로 표현 가능
             // 코드의 가독성을 위해 바꾸는 걸 추천!
             let alertf = UIAlertController(title: "이런!", message: "다시 시도해주세요.1", preferredStyle: .alert)
@@ -38,37 +38,34 @@ class SignUpViewController: UIViewController {
             return false
         }
     }
-    
-    
+
     @IBAction func Signinbut(_ sender: UIButton) {
         //비밀번호와 재확인 text가 같다면 alert띄우기
         if !pwcheck() { return }
 
         Auth.auth().createUser(withEmail: emailtext.text!, password: passwordtext.text!
-                ) { (user, error) in
-                    if user !=  nil{
+                ) { (user, _) in
+                    if user !=  nil {
                         let alertss = UIAlertController(title: "축하드립니다", message: "회원가입 성공", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default)
                         alertss.addAction(okAction)
                         self.present(alertss, animated: false, completion: nil)
-                    }
-                    else{
+                    } else {
                         let alertff = UIAlertController(title: "이런!", message: "다시 시도해주세요.2", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default)
-                        
+
                         alertff.addAction(okAction)
                         self.present(alertff, animated: false, completion: nil)
                     }
                 }
-        
+
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

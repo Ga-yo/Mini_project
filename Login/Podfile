@@ -8,7 +8,7 @@ target 'Login' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'FirebaseUI'
-
+  pod 'SwiftLint'
   # Pods for Login
 
 end

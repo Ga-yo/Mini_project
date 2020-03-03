@@ -8,9 +8,8 @@
 
 import Foundation
 
-class UserInfo{
-    
-    
+class UserInfo {
+
     struct User {
         let Name: String
         let Email: String
@@ -19,9 +18,9 @@ class UserInfo{
 
     var userlist: [User] = [User(Name: "이가영", Email: "39812@naver.com", Password: "dlrkdud03")]
 
-    func checkinfo(email: String, pw: String) -> Bool{
-        for user in userlist{
-            if user.Email == email && user.Password == pw{
+    func checkinfo(email: String, pw: String) -> Bool {
+        for user in userlist {
+            if user.Email == email && user.Password == pw {
                 return true
             }
         }
