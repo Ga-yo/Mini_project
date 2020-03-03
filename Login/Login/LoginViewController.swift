@@ -13,7 +13,11 @@ var Userlogin = UserInfo()
 
 class LoginViewController: UIViewController {
 
-    
+    // 변수는 viewController함수의 가장 위에 위치하는게 일반적!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var checkbutton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,11 +26,6 @@ class LoginViewController: UIViewController {
             password.placeholder = "이미 로그인 된 상태입니다."
         }
     }
-    
-
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var checkbutton: UIButton!
     
     @IBAction func Check(_ sender: Any) {
         guard let loginemail = email.text else {return}
