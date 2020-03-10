@@ -13,9 +13,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     let imageview = UIImage(named: "JAEMIN.jpeg")
-    let section0 = "JAEMIN"
-    let section1 = ["Friends", "Event", "Group", "CMU", "Town Hall", "Instant Games"]
-    let sectionTitle = ["Name", " ", "FAVORITES"]
+    let section0 = ["JAEMIN"]
+    let section1 = ["Friends", "Event", "Group", "CMU", "Town Hall", "Instant Games", "see more.." ]
+    let section2 = ["add favorites"]
+    let section3 = ["log out"]
+    let sectionTitle = ["Name", " ", "FAVORITES", " "]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//섹션안에 있는 행 수
         switch section {
         case 0:
-            return 1
+            return section0.count
         case 1:
             return section1.count
         case 2:
-            return 1
+            return section2.count
+        case 3:
+            return section3.count
         default:
             return 0
         }
@@ -50,18 +54,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if indexPath.section == 0{
             cell.cellImage.image = imageview
-            cell.cellLabel.text = section0
-            
-            
-            
+            cell.cellLabel.text = section0[indexPath.row
+]
         }else if indexPath.section == 1{
             cell.cellImage.isHidden = true
             cell.cellLabel.isHidden = true
+        
             cell.textLabel?.text = section1[indexPath.row]
+        }else if indexPath.section == 2{
+            cell.cellImage.isHidden = true
+            cell.cellLabel.isHidden = true
             
-            cell.button.tag = indexPath.row
-            cell.button.addTarget(self, action: "see more...:", for: .touchUpInside)
+            cell.textLabel?.text = section2[indexPath.row]
+            cell.textLabel?.textColor = .blue
+            cell.accessoryType = .none
+        }else if indexPath.section == 3{
+            cell.cellImage.isHidden = true
+            cell.cellLabel.isHidden = true
+            
+            cell.textLabel?.text = section3[indexPath.row]
+            cell.textLabel?.textColor = .red
+            cell.accessoryType = .none
+            
         }
+        
+        
          return cell
     }
     
@@ -79,6 +96,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
+        
     }
 //        cell.textLabel?.textAlignment = .center
 //        cell.accessoryType = .none
