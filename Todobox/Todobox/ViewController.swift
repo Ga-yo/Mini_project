@@ -113,8 +113,6 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
         tableview.dataSource = self
         tableview.delegate = self
-        list.append(TodoList(title: "test1", content: "testData1"))
-        list.append(TodoList(title: "test2", content: "testData2"))
         
         loadAllData()
         

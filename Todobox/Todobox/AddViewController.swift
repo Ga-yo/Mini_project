@@ -26,8 +26,7 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func backitem(_ sender: UIBarButtonItem) {
-    self.navigationController?.popViewController(animated: true)
-
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func doneitem(_ sender: Any) {
@@ -42,7 +41,7 @@ class AddViewController: UIViewController {
         list.append(item)
 
 
-    self.navigationController?.popViewController(animated: true) // 리스트 화면으로 돌아가기
+         // 리스트 화면으로 돌아가기
     }
     
 
