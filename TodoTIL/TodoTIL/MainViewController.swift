@@ -30,25 +30,25 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func loadAllData() {//data 불러오기
-           let userDefaults = UserDefaults.standard
-           guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
-               return
-           }
+            let userDefaults = UserDefaults.standard
+            guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
+                return
+            }
+     
             print(data.description)
-        
-               // list 배열에 저장하기
+     
+            // list 배열에 저장하기
             print(type(of: data))
-           // list 배열에 저장하기
-           list = data.map {
-            var name = $0["name"] as? String
-            var adress = $0["adress"] as? String
-            var Description = $0["description"] as? String
-            var time = $0["time"] as? String
-    
-            return User(name: name!, adress: adress!, description: Description!, time: time!)
-           }
-    }
-    
+            list = data.map {
+                var title = $0["Name"] as? String
+                var content = $0["adress"] as? String
+                var isComplete = $0["description"] as? String
+                var time = $0["time"] as? String
+                
+                return User(name: title!, adress: content!, description: isComplete!, time: time!)
+            }
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -82,7 +82,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.nameLabel.text = list[indexPath.row].name
         cell.adressLabel.text = list[indexPath.row].adress
-        cell.whereLabel.text = list[indexPath.row].description
+        cell.whereLabel.text = list[indexPath.row].time
         
         return cell
     }

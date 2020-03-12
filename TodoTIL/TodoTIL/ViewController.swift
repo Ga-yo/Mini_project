@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var Donebtu: UIButton!
     @IBOutlet weak var canclebtu: UIButton!
+    @IBOutlet weak var Label: UILabel!
     
     var usermanager: User?
     
@@ -26,8 +27,12 @@ class ViewController: UIViewController {
 
     @IBAction func save(_ sender: UIButton){
         let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         let time = formatter.string(from: datePicker.date)
             
+        Label.text = time
+        
         let name = Name.text!
         let Adress = adress.text!
         let description = Where.text!

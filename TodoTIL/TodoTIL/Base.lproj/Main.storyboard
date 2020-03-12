@@ -20,26 +20,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gwR-Yd-faR" customClass="TodoTableViewCell" customModule="TodoTIL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gwR-Yd-faR" id="TIm-j7-ZVn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-dR-QRS" customClass="Todo">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnt-or-OpT">
-                                                    <rect key="frame" x="352" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="352" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxT-9j-g66">
-                                                    <rect key="frame" x="186" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="186" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -138,6 +138,12 @@
                                     <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFG-VX-Nlq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-PE-UvW">
+                                <rect key="frame" x="186" y="411" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -146,6 +152,7 @@
                             <constraint firstItem="aX6-z3-dyZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="HSo-Cb-trI"/>
                             <constraint firstItem="hBN-9Z-VeB" firstAttribute="top" secondItem="6qx-G3-fpG" secondAttribute="bottom" constant="2" id="KJW-Sg-ObA"/>
                             <constraint firstItem="cp0-50-ZWI" firstAttribute="top" secondItem="6qx-G3-fpG" secondAttribute="bottom" constant="1" id="PY1-g3-p7p"/>
+                            <constraint firstItem="6qx-G3-fpG" firstAttribute="top" secondItem="cNI-PE-UvW" secondAttribute="bottom" constant="8" id="VMw-kS-7xe"/>
                             <constraint firstItem="gmd-wg-CCz" firstAttribute="top" secondItem="ZcM-4J-gxx" secondAttribute="bottom" constant="48" id="bbr-dl-qMv"/>
                             <constraint firstItem="cp0-50-ZWI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hBN-9Z-VeB" secondAttribute="trailing" constant="8" symbolic="YES" id="bxf-Jg-UqD"/>
                             <constraint firstItem="gmd-wg-CCz" firstAttribute="leading" secondItem="hBN-9Z-VeB" secondAttribute="leading" id="cl8-hl-EMu"/>
@@ -156,6 +163,7 @@
                             <constraint firstItem="gmd-wg-CCz" firstAttribute="centerX" secondItem="aX6-z3-dyZ" secondAttribute="centerX" id="oUh-QV-woS"/>
                             <constraint firstItem="gmd-wg-CCz" firstAttribute="leading" secondItem="ZcM-4J-gxx" secondAttribute="leading" id="rbq-j0-str"/>
                             <constraint firstItem="ZcM-4J-gxx" firstAttribute="centerX" secondItem="aX6-z3-dyZ" secondAttribute="centerX" id="ue1-Kn-QOM"/>
+                            <constraint firstItem="cNI-PE-UvW" firstAttribute="centerX" secondItem="gmd-wg-CCz" secondAttribute="centerX" id="xxS-Qa-ph4"/>
                             <constraint firstItem="gmd-wg-CCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="yZI-ck-Y36"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -163,6 +171,7 @@
                     <navigationItem key="navigationItem" id="efs-G4-uVS"/>
                     <connections>
                         <outlet property="Donebtu" destination="cp0-50-ZWI" id="IlL-kL-nIR"/>
+                        <outlet property="Label" destination="cNI-PE-UvW" id="6Pg-ok-Tca"/>
                         <outlet property="Name" destination="aX6-z3-dyZ" id="rHL-p0-RSV"/>
                         <outlet property="Where" destination="gmd-wg-CCz" id="zd0-VI-dB1"/>
                         <outlet property="adress" destination="ZcM-4J-gxx" id="P0m-cz-Ahh"/>
