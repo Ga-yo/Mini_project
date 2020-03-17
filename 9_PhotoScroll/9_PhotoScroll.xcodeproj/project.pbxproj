@@ -16,7 +16,6 @@
 		EB53A350241F6E1C000C8208 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53A34E241F6E1C000C8208 /* LaunchScreen.storyboard */; };
 		EB53A358241F70AE000C8208 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53A357241F70AE000C8208 /* CollectionViewCell.swift */; };
 		EB53A35A241FA157000C8208 /* PhotoCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53A359241FA157000C8208 /* PhotoCommentViewController.swift */; };
-		EB53A35D241FACD6000C8208 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53A35C241FACD6000C8208 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		EB53A351241F6E1C000C8208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB53A357241F70AE000C8208 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		EB53A359241FA157000C8208 /* PhotoCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCommentViewController.swift; sourceTree = "<group>"; };
-		EB53A35C241FACD6000C8208 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F5B4A2BC22F40A971125C088 /* Pods_9_PhotoScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_9_PhotoScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,11 +86,10 @@
 			children = (
 				EB53A343241F6E1B000C8208 /* AppDelegate.swift */,
 				EB53A345241F6E1B000C8208 /* SceneDelegate.swift */,
-				EB53A347241F6E1B000C8208 /* ViewController.swift */,
 				EB53A357241F70AE000C8208 /* CollectionViewCell.swift */,
+				EB53A347241F6E1B000C8208 /* ViewController.swift */,
 				EB53A359241FA157000C8208 /* PhotoCommentViewController.swift */,
 				EB53A349241F6E1B000C8208 /* Main.storyboard */,
-				EB53A35C241FACD6000C8208 /* PageViewController.swift */,
 				EB53A34C241F6E1C000C8208 /* Assets.xcassets */,
 				EB53A34E241F6E1C000C8208 /* LaunchScreen.storyboard */,
 				EB53A351241F6E1C000C8208 /* Info.plist */,
@@ -218,7 +215,6 @@
 				EB53A348241F6E1B000C8208 /* ViewController.swift in Sources */,
 				EB53A344241F6E1B000C8208 /* AppDelegate.swift in Sources */,
 				EB53A35A241FA157000C8208 /* PhotoCommentViewController.swift in Sources */,
-				EB53A35D241FACD6000C8208 /* PageViewController.swift in Sources */,
 				EB53A358241F70AE000C8208 /* CollectionViewCell.swift in Sources */,
 				EB53A346241F6E1B000C8208 /* SceneDelegate.swift in Sources */,
 			);

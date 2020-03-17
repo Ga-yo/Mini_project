@@ -1,5 +1,5 @@
 //
-//  PageViewController.swift
+//  ZoomViewController.swift
 //  9_PhotoScroll
 //
 //  Created by 이가영 on 2020/03/17.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController {
+class ZoomViewController: UIViewController {
+
+    @IBOutlet weak var zoomImageView: UIImageView!
+
+    var imagesave: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = self
-
+        zoomImageView.image = UIImage(named: imagesave)
+        // Do any additional setup after loading the view.
     }
 
     /*
@@ -26,3 +30,5 @@ class PageViewController: UIPageViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}

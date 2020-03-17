@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 
         collection.delegate = self
         collection.dataSource = self
+        title = "PhtoScroll"
         collection.reloadData()
     }
 
@@ -28,7 +29,9 @@ class ViewController: UIViewController {
           let indexPath = collection?.indexPath(for: cell),
           let photoCommentViewController = segue.destination as? PhotoCommentViewController {
           photoCommentViewController.photoName = "올라프\(indexPath.row + 1)"
+          photoCommentViewController.photoNumber = indexPath.row
         }
+
     }
 }
 
