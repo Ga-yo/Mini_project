@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension HomeViewController: UICollectionViewDataSource{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int{
         return 1
@@ -59,4 +59,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     
+}
+
+extension HomeViewController: UIScrollViewDelegate{
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+         
+        var offset = targetContentOffset.pointee
+        
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+    }
 }

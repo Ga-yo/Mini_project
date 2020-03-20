@@ -23,4 +23,11 @@ class InterestCollectionViewCell: UICollectionViewCell {
         interestTitleLabel?.text = interest.title
         featuredImageView?.image = interest.featuredImage
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = 10.0
+        self.clipsToBounds = true
+    }
 }
