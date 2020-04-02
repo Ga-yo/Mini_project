@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    var meal: Meal?
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +27,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         photoImageView.isUserInteractionEnabled = true
         
+        updateSaveButtonState()
+        
     }
 
+    @IBAction func cancel(_ ender: UIBarButtonItem){
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer){
 
         nameTextField.resignFirstResponder()
@@ -34,8 +45,20 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         present(imagePickerController, animated: true, completion: nil)
     }
     
-    @IBAction func setName(_ sender: UIButton) {
-        mealNameLabel.text = "Default name"
+ 
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === saveButton else{
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        let rating = ratingControl.rating
+        meal = Meal(name: name, photo: photo, rating: rating)
     }
     
     //MARK: Delegate
@@ -45,9 +68,21 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+    private func updateSaveButtonState(){
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        saveButton.isEnabled = false
+        
+    }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         //취소버튼을 누르면 실행
         print("취소")
