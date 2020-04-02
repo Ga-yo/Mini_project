@@ -76,7 +76,7 @@ import UIKit
     
     //MARK: Button Action
     @objc func ratingButtonTapped(button: UIButton){
-       guard let index = ratingButton.index(of: button) else {
+        guard let index = ratingButton.index(of: button) else {
             fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButton)")
         }
         

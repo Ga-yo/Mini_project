@@ -22,6 +22,7 @@ class Meal{
         guard (rating >= 0) && (rating <= 5) else {
             return nil
         }
+        
         self.name = name
         self.photo = photo
         self.rating = rating
