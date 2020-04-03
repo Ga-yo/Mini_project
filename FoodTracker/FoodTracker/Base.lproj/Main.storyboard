@@ -55,6 +55,7 @@
                                     <outlet property="nameLabel" destination="pte-jQ-qBv" id="xcD-L3-6qc"/>
                                     <outlet property="photoImageView" destination="6MS-z5-Ty5" id="CRD-eP-Gfn"/>
                                     <outlet property="ratingControl" destination="8Lu-pa-8ld" id="eXl-bA-2MS"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShowDetail" id="fJa-52-e3R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Your Meals" id="cys-sB-51t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eh1-mC-Ac7">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="wiH-Uk-kHG"/>
+                                <segue destination="eSX-cR-7IU" kind="show" identifier="AddItem" id="wiH-Uk-kHG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -83,14 +84,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jt6-ab-Yvl">
-                                <rect key="frame" x="20" y="108" width="374" height="351"/>
+                                <rect key="frame" x="20" y="20" width="374" height="328.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKT-ht-GNI">
-                                        <rect key="frame" x="119" y="0.0" width="136" height="62.5"/>
+                                        <rect key="frame" x="119" y="0.0" width="136" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cmz-3c-UTB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -98,7 +102,7 @@
                                         </connections>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="JFL-Sp-zCw">
-                                        <rect key="frame" x="0.0" y="70.5" width="374" height="228.5"/>
+                                        <rect key="frame" x="0.0" y="48" width="374" height="228.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="228.5" id="xZY-Tf-aTq"/>
@@ -108,7 +112,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="06O-rI-hfa" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="307" width="252" height="44"/>
+                                        <rect key="frame" x="61" y="284.5" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -116,9 +120,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Jt6-ab-Yvl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CnB-IZ-Zsy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jt6-ab-Yvl" secondAttribute="bottom" constant="403" id="Mq4-ej-rFX"/>
-                            <constraint firstItem="Jt6-ab-Yvl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PPE-zm-nk8"/>
                             <constraint firstAttribute="trailing" secondItem="Jt6-ab-Yvl" secondAttribute="trailing" constant="20" id="UHh-VX-hkQ"/>
+                            <constraint firstItem="Jt6-ab-Yvl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j2h-qa-TUT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -151,7 +154,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="114.50892857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Brr-PT-CEK">
@@ -171,7 +174,29 @@
             </objects>
             <point key="canvasLocation" x="-617.39130434782612" y="114.50892857142857"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XPm-rl-ySa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSX-cR-7IU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uJF-gR-Q24"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xh4-KM-Mra">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bkb-dF-Iw1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46P-6Q-5wC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="-185"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fJa-52-e3R"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="sky" width="512" height="512"/>
     </resources>

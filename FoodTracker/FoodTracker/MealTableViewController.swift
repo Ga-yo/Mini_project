@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 var meals = [Meal]()
 
@@ -34,20 +35,32 @@ class MealTableViewController: UITableViewController {
     
        @IBAction func unsindToMealList(_ sender: UIStoryboardSegue){
              if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
+                
+                //테이블 뷰의 행이 선택되어있는지 확인
+                if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                    meals[selectedIndexPath.row] = meal
+                    tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                }else{
+                    let newIndexPath = IndexPath(row: meals.count, section: 0)
+                       
+                       meals.append(meal)
+                    
+                    tableView.insertRows(at: [newIndexPath], with: .automatic)
+                }
                    
                    // Add a new meal.
-                   let newIndexPath = IndexPath(row: meals.count, section: 0)
                    
-                   meals.append(meal)
-                
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
                 
                }
             
         }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+        
         loadSampleMeal()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -57,6 +70,34 @@ class MealTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         super.prepare(for: segue, sender: sender)
+           
+           switch(segue.identifier ?? "") {
+               
+           case "AddItem":
+               os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+               
+           case "ShowDetail":
+               guard let mealDetailViewController = segue.destination as? MealViewController else {
+                   fatalError("Unexpected destination: \(segue.destination)")
+               }
+               
+               guard let selectedMealCell = sender as? MealTableViewCell else {
+                   fatalError("Unexpected sender: \(sender)")
+               }
+               
+               guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                   fatalError("The selected cell is not being displayed by the table")
+               }
+               
+               let selectedMeal = meals[indexPath.row]
+               mealDetailViewController.meal = selectedMeal
+               
+           default:
+               print("Unexpected Segue Identifier; \(segue.identifier)")
+           }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -71,6 +112,18 @@ class MealTableViewController: UITableViewController {
         return 90
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            meals.remove(at: indexPath.row) //삭제!
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }else if editingStyle == .insert{
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {

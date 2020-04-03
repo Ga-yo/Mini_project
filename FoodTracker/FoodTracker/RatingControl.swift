@@ -10,17 +10,20 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     //MARK: Initialization
+    //별 사이즈
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0){
         didSet{
             setupButtons()
         }
     }
+    //별 개수
     @IBInspectable var starCount: Int = 5{
         didSet{
             setupButtons()
         }
     }
     
+    //버튼 선언
     private var ratingButton = [UIButton]()
     
     var rating = 0 {
@@ -39,6 +42,7 @@ import UIKit
         setupButtons()
     }
     
+    //별점 셋ㅇ
     private func setupButtons(){
         let bundle = Bundle(for: type(of: self))
         let filledStar = UIImage(named: "filledstar", in: bundle, compatibleWith: self.traitCollection)
@@ -50,6 +54,7 @@ import UIKit
             removeArrangedSubview(button)
             button.removeFromSuperview()
         }
+        
         ratingButton.removeAll()
 
         for index in 0..<starCount{

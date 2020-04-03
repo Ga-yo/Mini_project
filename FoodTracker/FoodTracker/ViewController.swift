@@ -25,15 +25,34 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Do any additional setup after loading the view.
         nameTextField.delegate = self
         
+        if let meal = meal{
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
         photoImageView.isUserInteractionEnabled = true
         
         updateSaveButtonState()
         
     }
 
+    //취소를 누르면 dismiss
     @IBAction func cancel(_ ender: UIBarButtonItem){
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode{
+            dismiss(animated: true, completion: nil)
+        }else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }else{
+            fatalError("The MealViewController is not inside a navigation controller")
+            
+        }
     }
+    
+    //이미지를 누르면 제스처로 액션 취하기
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer){
 
         nameTextField.resignFirstResponder()
@@ -48,8 +67,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
  
     //MARK: Navigation
     
+    //다음 뷰에 데이터 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
         guard let button = sender as? UIBarButtonItem, button === saveButton else{
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
@@ -89,6 +110,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismiss(animated: true, completion: nil)
     }
     
+    //이미지 선택하기
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
               
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
