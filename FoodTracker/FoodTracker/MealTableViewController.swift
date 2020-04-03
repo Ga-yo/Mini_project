@@ -33,6 +33,21 @@ class MealTableViewController: UITableViewController {
         meals += [meal1, meal2, meal3]
     }
     
+    private func saveMeals() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL!.path)
+        
+        //저장에 성공하면 콘솔에 디버그 메세지가, 실패하면 콘솔에 오류 메세지
+        if isSuccessfulSave {
+            os_log("Meals successfully saved", log: OSLog.default, type: .debug)
+        }else{
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadMeals() -> [Meal]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL!.path) as? [Meal]
+    }
+    
        @IBAction func unsindToMealList(_ sender: UIStoryboardSegue){
              if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
                 
@@ -47,6 +62,8 @@ class MealTableViewController: UITableViewController {
                     
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                 }
+                
+                saveMeals()
                    
                    // Add a new meal.
                    
@@ -58,6 +75,12 @@ class MealTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        if let saveMeals = loadMeals(){
+            meals += saveMeals
+        }else{
+            loadSampleMeal()
+        }
         
         loadSampleMeal()
 
@@ -112,18 +135,22 @@ class MealTableViewController: UITableViewController {
         return 90
     }
     
+    //edit 스타일 지정(여기서 삭제 구현 가능)
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             meals.remove(at: indexPath.row) //삭제!
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }else if editingStyle == .insert{
             
         }
+        
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
