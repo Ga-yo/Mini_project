@@ -64,16 +64,48 @@
 			children = (
 				EB4BB17924446EE200348E1A /* AppDelegate.swift */,
 				EB4BB17B24446EE200348E1A /* SceneDelegate.swift */,
-				EB4BB17D24446EE200348E1A /* ViewController.swift */,
-				EB4BB18D24446F3400348E1A /* Album.swift */,
-				EB4BB18F24446FD100348E1A /* AlbumView.swift */,
-				EB4BB191244473AC00348E1A /* HTTPClient.swift */,
-				EB4BB17F24446EE200348E1A /* Main.storyboard */,
-				EB4BB18224446EE400348E1A /* Assets.xcassets */,
 				EB4BB18424446EE400348E1A /* LaunchScreen.storyboard */,
 				EB4BB18724446EE400348E1A /* Info.plist */,
+				EB4BB194244477E000348E1A /* Controller */,
+				EB4BB193244477C700348E1A /* API */,
+				EB4BB1962444780A00348E1A /* View */,
+				EB4BB195244477F600348E1A /* Model */,
+				EB4BB17F24446EE200348E1A /* Main.storyboard */,
+				EB4BB18224446EE400348E1A /* Assets.xcassets */,
 			);
 			path = 18_blueLlibrary;
+			sourceTree = "<group>";
+		};
+		EB4BB193244477C700348E1A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BB191244473AC00348E1A /* HTTPClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EB4BB194244477E000348E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BB17D24446EE200348E1A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EB4BB195244477F600348E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BB18D24446F3400348E1A /* Album.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB4BB1962444780A00348E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BB18F24446FD100348E1A /* AlbumView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
