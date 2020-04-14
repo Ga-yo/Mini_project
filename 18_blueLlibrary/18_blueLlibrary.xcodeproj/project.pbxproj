@@ -16,6 +16,8 @@
 		EB4BB18E24446F3400348E1A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB18D24446F3400348E1A /* Album.swift */; };
 		EB4BB19024446FD100348E1A /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB18F24446FD100348E1A /* AlbumView.swift */; };
 		EB4BB192244473AC00348E1A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB191244473AC00348E1A /* HTTPClient.swift */; };
+		EBD5D7802445BF1900DD1E71 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5D77F2445BF1900DD1E71 /* LibraryAPI.swift */; };
+		EBD5D7822445BF8400DD1E71 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5D7812445BF8400DD1E71 /* PersistencyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		EB4BB18D24446F3400348E1A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		EB4BB18F24446FD100348E1A /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		EB4BB191244473AC00348E1A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		EBD5D77F2445BF1900DD1E71 /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		EBD5D7812445BF8400DD1E71 /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		EB4BB193244477C700348E1A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				EBD5D77F2445BF1900DD1E71 /* LibraryAPI.swift */,
+				EBD5D7812445BF8400DD1E71 /* PersistencyManager.swift */,
 				EB4BB191244473AC00348E1A /* HTTPClient.swift */,
 			);
 			path = API;
@@ -185,6 +191,8 @@
 				EB4BB17C24446EE200348E1A /* SceneDelegate.swift in Sources */,
 				EB4BB19024446FD100348E1A /* AlbumView.swift in Sources */,
 				EB4BB18E24446F3400348E1A /* Album.swift in Sources */,
+				EBD5D7802445BF1900DD1E71 /* LibraryAPI.swift in Sources */,
+				EBD5D7822445BF8400DD1E71 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
