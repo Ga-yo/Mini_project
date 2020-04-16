@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB29A07B244837F20050B309 /* HorizontalScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29A07A244837F10050B309 /* HorizontalScrollerView.swift */; };
 		EB4BB17A24446EE200348E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB17924446EE200348E1A /* AppDelegate.swift */; };
 		EB4BB17C24446EE200348E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB17B24446EE200348E1A /* SceneDelegate.swift */; };
 		EB4BB17E24446EE200348E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BB17D24446EE200348E1A /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB29A07A244837F10050B309 /* HorizontalScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollerView.swift; sourceTree = "<group>"; };
 		EB4BB17624446EE200348E1A /* 18_blueLlibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 18_blueLlibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BB17924446EE200348E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BB17B24446EE200348E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				EB4BB17D24446EE200348E1A /* ViewController.swift */,
+				EB29A07A244837F10050B309 /* HorizontalScrollerView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				EB4BB17E24446EE200348E1A /* ViewController.swift in Sources */,
 				EB4BB17A24446EE200348E1A /* AppDelegate.swift in Sources */,
+				EB29A07B244837F20050B309 /* HorizontalScrollerView.swift in Sources */,
 				EB4BB192244473AC00348E1A /* HTTPClient.swift in Sources */,
 				EB4BB17C24446EE200348E1A /* SceneDelegate.swift in Sources */,
 				EB4BB19024446FD100348E1A /* AlbumView.swift in Sources */,

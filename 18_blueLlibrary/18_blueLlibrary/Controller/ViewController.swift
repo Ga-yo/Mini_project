@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var undoBarButtonItem: UIBarButtonItem!
     @IBOutlet var trashBarButtonItem: UIBarButtonItem!
     
+    @IBOutlet weak var horizontalScrollerView: HorizontalScrollerView!
+    
     private var currentAlbumIndex = 0
     private var currentAlbumData: [AlbumData]?
     private var allAlbums = [Album] ()
@@ -25,6 +27,9 @@ class ViewController: UIViewController {
         allAlbums = LibraryAPI.share.getAlbums()
         showDataForAlbum(at:currentAlbumIndex)
 
+        horizontalScrollerView.delegate = self
+        horizontalScrollerView.dataSource = self
+        horizontalScrollerView.reload()
         
     }
 
@@ -63,4 +68,37 @@ extension ViewController: UITableViewDataSource{
     }
     
     
+}
+
+extension ViewController: HorizontalScrollerViewDelegate{
+    func horizontalScrollerView(_ horizontalScrollerView: HorizontalScrollerView, didSelectViewAt index: Int) {
+      //1
+        let previousAlbumView = horizontalScrollerView.view(index: currentAlbumIndex) as! AlbumView
+      previousAlbumView.highlightAlbum(false)
+      //2
+      currentAlbumIndex = index
+      //3
+        let albumView = horizontalScrollerView.view(index: currentAlbumIndex) as! AlbumView
+      albumView.highlightAlbum(true)
+      //4
+      showDataForAlbum(at: index)
+    }
+}
+
+extension ViewController: HorizontalSxrollerViewDataSOurce {
+  func numberOfViews(in horizontalScrollerView: HorizontalScrollerView) -> Int {
+    return allAlbums.count
+  }
+  
+  func horizontalScrollerView(_ horizontalScrollerView: HorizontalScrollerView, viewAt index: Int) -> UIView {
+    
+    let album = allAlbums[index]
+    let albumView = AlbumView(frame: CGRect(x: 0, y: 0, width: 100, height: 100 ))
+    if currentAlbumIndex == index {
+      albumView.highlightAlbum(true)
+    } else {
+      albumView.highlightAlbum(false)
+    }
+    return albumView
+  }
 }

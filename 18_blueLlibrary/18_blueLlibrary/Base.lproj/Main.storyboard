@@ -45,7 +45,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78E-Li-G70">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78E-Li-G70" customClass="HorizontalScrollerView" customModule="_8_blueLlibrary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="206"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -68,6 +68,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ech-my-ihW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="horizontalScrollerView" destination="78E-Li-G70" id="ZE2-E5-U7k"/>
                         <outlet property="tableView" destination="9FU-Tv-klg" id="VR1-U3-551"/>
                         <outlet property="trashBarButtonItem" destination="ech-my-ihW" id="XkA-gy-JFq"/>
                         <outlet property="undoBarButtonItem" destination="YeA-qk-Fkj" id="vIe-xa-zBF"/>
