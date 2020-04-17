@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     private var currentAlbumData: [AlbumData]?
     private var allAlbums = [Album] ()
     
+    //앨범 색인을 저장& 복원
+    static let IndexRestorationKey = "currentAlbumIndex"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,6 +36,11 @@ class ViewController: UIViewController {
         
     }
 
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        horizontalScrollerView.scrollToView(at: currentAlbumIndex, animated: false)
+    }
+    
     private func showDataForAlbum(at index: Int){
         if (index < allAlbums.count && index > -1) {
             let album = allAlbums[index]
@@ -44,9 +52,26 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func encodeRestorableState(with coder: NSCoder) {
+          coder.encode(currentAlbumIndex, forKey: Constants.IndexRestorationKey)
+           super.encodeRestorableState(with: coder)
+      }
+      
+    override func decodeRestorableState(with coder: NSCoder) {
+      super.decodeRestorableState(with: coder)
+       currentAlbumIndex = coder.decodeInteger(forKey: Constants.IndexRestorationKey)
+      showDataForAlbum(at: currentAlbumIndex)
+      horizontalScrollerView.reload()
+      }
 
 }
 
+enum Constants {
+    static let IndexRestorationKey = "currentAlbumIndex"
+    
+  
+
+}
 
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +118,8 @@ extension ViewController: HorizontalSxrollerViewDataSOurce {
   func horizontalScrollerView(_ horizontalScrollerView: HorizontalScrollerView, viewAt index: Int) -> UIView {
     
     let album = allAlbums[index]
-    let albumView = AlbumView(frame: CGRect(x: 0, y: 0, width: 100, height: 100 ))
+    let albumView = AlbumView(frame: CGRect(x: 0, y: 0, width: 100, height: 100) , coverUrl: album.coverUrl)
+    
     if currentAlbumIndex == index {
       albumView.highlightAlbum(true)
     } else {

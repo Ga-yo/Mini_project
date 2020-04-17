@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 //데이터 지속성 처리
 final class PersistencyManager{
     private var albums = [Album]()
@@ -60,5 +61,44 @@ final class PersistencyManager{
     
     func deleteAlbum(at index: Int){
         albums.remove(at: index)
+    }
+    
+    private var cache: URL {
+      return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+    }
+
+    func saveImage(_ image: UIImage, filename: String) {
+      let url = cache.appendingPathComponent(filename)
+        guard let data = image.pngData() else {
+        return
+      }
+      try? data.write(to: url)
+    }
+
+    func ​getImage(with filename: String) -> UIImage? {
+        let url = cache.appendingPathComponent(filename)
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        return UIImage(data: data)
+            
+    }
+    
+    //파일에 저장할 URL
+    private var documents: URL {
+      return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+
+    //파일 이름에 대한 상수
+    private enum Filenames {
+     static let Albums = "albums.json"
+    }
+
+    //파일을 앨범에 쓰는 방법
+    func ​saveAlbums() {
+     let url = documents.appendingPathComponent(Filenames.Albums)
+     let encoder = JSONEncoder()
+     guard let encodedData = try? encoder.encode(albums) else { return }
+     try? encodedData.write(to: url)
     }
 }
