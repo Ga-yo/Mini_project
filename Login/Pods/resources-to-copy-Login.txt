@@ -1,0 +1,8 @@
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseAnonymousAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseEmailAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseFacebookAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseGoogleAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebaseOAuthUI.bundle
+/Users/igayeong/Library/Developer/Xcode/DerivedData/Login-aqiosmqjvadwsudjnswmmmkoovnm/Build/Products/Debug-iphonesimulator/FirebaseUI/FirebasePhoneAuthUI.bundle
+/Users/igayeong/Documents/GitHub/iOS/Login/Pods/GoogleSignIn/Resources/GoogleSignIn.bundle
