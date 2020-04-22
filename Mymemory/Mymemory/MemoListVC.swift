@@ -49,17 +49,17 @@ class MemoListVC: UITableViewController{
         
         let cellId = row.image == nil ? "memoCell" : "memoCellWithImage"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MemoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? MemoCell
         
-        cell.subject?.text = row.title
-        cell.contents?.text = row.contents
-        cell.img?.image = row.image
+        cell?.subject?.text = row.title
+        cell?.contents?.text = row.contents
+        cell?.img?.image = row.image
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        cell.regdate.text = formatter.string(from: row.regdate!)
+        cell?.regdate.text = formatter.string(from: row.regdate!)
         
-        return cell
+        return cell!
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -10,7 +10,7 @@
         <!--Memo ListVC-->
         <scene sceneID="v9P-7i-jPG">
             <objects>
-                <tableViewController id="EgH-jI-5ku" customClass="MemoListVC" customModule="Mymemory" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EgH-jI-5ku" customClass="MemoListVC" customModule="메모하라" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9c-xi-Ufz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="6FM-un-2r3" customClass="MemoCell" customModule="Mymemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="6FM-un-2r3" customClass="MemoCell" customModule="메모하라" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6FM-un-2r3" id="mPB-0B-jJm">
@@ -75,10 +75,9 @@
                                     <outlet property="contents" destination="y8D-w6-v8J" id="CUW-6R-7Z1"/>
                                     <outlet property="regdate" destination="PLB-ug-eeM" id="LNS-kJ-hiq"/>
                                     <outlet property="subject" destination="vvh-8H-Q0N" id="btO-ck-0fU"/>
-                                    <segue destination="qLu-Au-qNu" kind="show" identifier="read_sg" id="SS4-8m-jax"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="BwV-X8-BpJ" customClass="MemoCell" customModule="Mymemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="BwV-X8-BpJ" customClass="MemoCell" customModule="메모하라" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BwV-X8-BpJ" id="ygV-2b-Esj">
@@ -164,7 +163,7 @@
         <!--Memo FormmVC-->
         <scene sceneID="iIE-fA-afP">
             <objects>
-                <viewController id="TAW-eg-8IB" customClass="MemoFormmVC" customModule="Mymemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TAW-eg-8IB" customClass="MemoFormmVC" customModule="메모하라" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gIj-h9-Us4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,13 +222,13 @@
         <!--MemoRead-->
         <scene sceneID="DFh-OM-gWh">
             <objects>
-                <viewController storyboardIdentifier="MemoRead" title="MemoRead" id="qLu-Au-qNu" customClass="MemoReadVC" customModule="Mymemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" title="MemoRead" id="qLu-Au-qNu" customClass="MemoReadVC" customModule="메모하라" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxW-Uu-NSF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ao-bt-qdd">
-                                <rect key="frame" x="0.0" y="104" width="414" height="21"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MtX-OO-ZQV"/>
                                 </constraints>
@@ -238,13 +237,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klF-uY-FBG">
-                                <rect key="frame" x="0.0" y="145" width="414" height="16"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nOn-wK-Q6E">
-                                <rect key="frame" x="20" y="181" width="250" height="250"/>
+                                <rect key="frame" x="20" y="137" width="250" height="294"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
