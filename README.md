@@ -1,2 +1,2 @@
 # mini_project
-https://github.com/soapyigu/Swift-30-Projects 참고해서 만든 
+내가 만든 미니프로젝트 모음집
