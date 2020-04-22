@@ -1,2 +1,2 @@
 # mini_project
-<h4>사소하게 만든 것들</h4>
+https://github.com/soapyigu/Swift-30-Projects 참고해서 만든 
