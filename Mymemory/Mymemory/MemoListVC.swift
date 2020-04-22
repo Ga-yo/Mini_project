@@ -11,6 +11,7 @@ import UIKit
 class MemoListVC: UITableViewController{
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +45,7 @@ class MemoListVC: UITableViewController{
         vc.param = row
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = self.appDelegate.memolist[indexPath.row]
         
@@ -61,6 +63,16 @@ class MemoListVC: UITableViewController{
         
         return cell!
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueWithImage" || segue.identifier == "segueCell"){
+            let vc = segue.identifier as? MemoReadVC
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            vc?.param = self.appDelegate.memolist[selectedIndex]
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

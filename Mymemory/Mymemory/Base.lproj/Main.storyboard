@@ -37,7 +37,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8D-w6-v8J">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8D-w6-v8J">
                                             <rect key="frame" x="30" y="37" width="335" height="24.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="7sl-Nw-j7O"/>
@@ -99,10 +99,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-Kb-tZ7">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의  내용          " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-Kb-tZ7">
                                             <rect key="frame" x="89" y="37" width="276" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="nW4-fQ-dpC"/>
+                                                <constraint firstAttribute="height" constant="30" id="p7J-wo-kVN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -236,34 +236,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klF-uY-FBG">
-                                <rect key="frame" x="0.0" y="101" width="414" height="16"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nOn-wK-Q6E">
+                                <rect key="frame" x="20" y="115" width="250" height="316"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-8C-Q9a">
+                                <rect key="frame" x="0.0" y="89" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ihL-SV-Ngk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nOn-wK-Q6E">
-                                <rect key="frame" x="20" y="137" width="250" height="294"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0Ao-bt-qdd" firstAttribute="leading" secondItem="kSO-h8-YqT" secondAttribute="leading" id="4Kz-2d-Lrz"/>
+                            <constraint firstItem="hvg-8C-Q9a" firstAttribute="leading" secondItem="kSO-h8-YqT" secondAttribute="leading" id="EUF-qE-voO"/>
                             <constraint firstItem="kSO-h8-YqT" firstAttribute="bottom" secondItem="nOn-wK-Q6E" secondAttribute="bottom" constant="431" id="Gaq-BZ-IBq"/>
                             <constraint firstItem="nOn-wK-Q6E" firstAttribute="leading" secondItem="KxW-Uu-NSF" secondAttribute="leadingMargin" id="Hnj-ZJ-hIl"/>
-                            <constraint firstItem="klF-uY-FBG" firstAttribute="top" secondItem="0Ao-bt-qdd" secondAttribute="bottom" constant="20" id="IXa-gw-iyK"/>
-                            <constraint firstItem="klF-uY-FBG" firstAttribute="leading" secondItem="kSO-h8-YqT" secondAttribute="leading" id="SZw-X5-3Os"/>
+                            <constraint firstItem="kSO-h8-YqT" firstAttribute="trailing" secondItem="hvg-8C-Q9a" secondAttribute="trailing" id="NXP-Oa-9fF"/>
                             <constraint firstItem="0Ao-bt-qdd" firstAttribute="top" secondItem="kSO-h8-YqT" secondAttribute="top" constant="16" id="XFR-Zn-rAe"/>
+                            <constraint firstItem="nOn-wK-Q6E" firstAttribute="top" secondItem="hvg-8C-Q9a" secondAttribute="bottom" constant="5" id="b50-3Z-X6n"/>
+                            <constraint firstItem="hvg-8C-Q9a" firstAttribute="top" secondItem="0Ao-bt-qdd" secondAttribute="bottom" constant="8" symbolic="YES" id="gph-bN-8S5"/>
                             <constraint firstItem="kSO-h8-YqT" firstAttribute="trailing" secondItem="0Ao-bt-qdd" secondAttribute="trailing" id="lkU-va-Pk9"/>
-                            <constraint firstItem="kSO-h8-YqT" firstAttribute="trailing" secondItem="klF-uY-FBG" secondAttribute="trailing" id="rry-fd-m0F"/>
                             <constraint firstItem="kSO-h8-YqT" firstAttribute="trailing" secondItem="nOn-wK-Q6E" secondAttribute="trailing" constant="144" id="t1K-Kf-l2v"/>
-                            <constraint firstItem="nOn-wK-Q6E" firstAttribute="top" secondItem="klF-uY-FBG" secondAttribute="bottom" constant="20" id="t32-59-rli"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kSO-h8-YqT"/>
                     </view>
                     <navigationItem key="navigationItem" id="gnf-xj-a66"/>
                     <connections>
-                        <outlet property="contents" destination="klF-uY-FBG" id="Pgq-Ld-cjd"/>
+                        <outlet property="contents" destination="hvg-8C-Q9a" id="IFT-4c-9ng"/>
                         <outlet property="img" destination="nOn-wK-Q6E" id="fPw-fz-CjQ"/>
                         <outlet property="subject" destination="0Ao-bt-qdd" id="45Q-kz-p3a"/>
                     </connections>

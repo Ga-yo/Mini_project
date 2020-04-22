@@ -23,6 +23,7 @@ class MemoReadVC: UIViewController {
         self.contents.text = param?.contents
         self.img.image = param?.image
         
+        print(contents!)
 //        let formatter = DateFormatter()
 //        formatter.dateFormat = "dd일 HH:mm분에 작성됨"
 //        let dateString = formatter.string(from: (param?.regdate)!)

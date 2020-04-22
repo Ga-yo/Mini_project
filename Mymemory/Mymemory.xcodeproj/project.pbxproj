@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EBA473D8244EA44E00C1CB13 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473D7244EA44E00C1CB13 /* MemoListVC.swift */; };
-		EBA473DA244EAACE00C1CB13 /* MemoFormmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473D9244EAACE00C1CB13 /* MemoFormmVC.swift */; };
+		EBA473DA244EAACE00C1CB13 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473D9244EAACE00C1CB13 /* MemoFormVC.swift */; };
 		EBA473DC244EAAE600C1CB13 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473DB244EAAE600C1CB13 /* MemoReadVC.swift */; };
 		EBA473DE244EAB0600C1CB13 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473DD244EAB0600C1CB13 /* MemoCell.swift */; };
 		EBA473E0244EB45400C1CB13 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA473DF244EB45400C1CB13 /* MemoData.swift */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		EBA473D7244EA44E00C1CB13 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
-		EBA473D9244EAACE00C1CB13 /* MemoFormmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormmVC.swift; sourceTree = "<group>"; };
+		EBA473D9244EAACE00C1CB13 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
 		EBA473DB244EAAE600C1CB13 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		EBA473DD244EAB0600C1CB13 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		EBA473DF244EB45400C1CB13 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				EBA473D7244EA44E00C1CB13 /* MemoListVC.swift */,
 				EBC4F225244DC37300E953CC /* Main.storyboard */,
 				EBA473DF244EB45400C1CB13 /* MemoData.swift */,
-				EBA473D9244EAACE00C1CB13 /* MemoFormmVC.swift */,
+				EBA473D9244EAACE00C1CB13 /* MemoFormVC.swift */,
 				EBA473DB244EAAE600C1CB13 /* MemoReadVC.swift */,
 				EBA473DD244EAB0600C1CB13 /* MemoCell.swift */,
 				EBC4F22B244DC37500E953CC /* Assets.xcassets */,
@@ -156,7 +156,7 @@
 				EBA473DE244EAB0600C1CB13 /* MemoCell.swift in Sources */,
 				EBA473E0244EB45400C1CB13 /* MemoData.swift in Sources */,
 				EBC4F22A244DC37300E953CC /* Mymemory.xcdatamodeld in Sources */,
-				EBA473DA244EAACE00C1CB13 /* MemoFormmVC.swift in Sources */,
+				EBA473DA244EAACE00C1CB13 /* MemoFormVC.swift in Sources */,
 				EBA473DC244EAAE600C1CB13 /* MemoReadVC.swift in Sources */,
 				EBA473D8244EA44E00C1CB13 /* MemoListVC.swift in Sources */,
 				EBC4F220244DC37300E953CC /* AppDelegate.swift in Sources */,
