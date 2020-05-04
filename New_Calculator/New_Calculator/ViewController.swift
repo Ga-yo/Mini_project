@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var number: UIButton!
     @IBOutlet weak var operation: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resetAC: UIButton!
@@ -24,6 +23,7 @@ class ViewController: UIViewController {
 
     var didSelect = true
     var isTyping = false
+    
     var fristN: String! = nil
     var secondN: String! = nil
     var resultNum: String = "0"
@@ -76,6 +76,12 @@ class ViewController: UIViewController {
         }else if minus! < 0 {
             resultLabel.text?.removeFirst()
         }
+    }
+    
+    @IBAction func percentage(_ sender: UIButton){
+        let percent = Double(resultLabel.text!)
+        
+        resultLabel.text = String(percent!/100)
     }
     
     func Calculation(_ oper: String, _ firstNum: String?, _ secondNum: String?) -> String {
