@@ -9,10 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var countBtn: Int = 0
-    
-  
     
     @IBOutlet weak var number: UIButton!
     @IBOutlet weak var operation: UIButton!
@@ -26,7 +22,7 @@ class ViewController: UIViewController {
 
     }
 
-    var didSelect = false
+    var didSelect = true
     var isTyping = false
     var fristN: String! = nil
     var secondN: String! = nil
@@ -48,10 +44,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func operating(_ sender: UIButton){
-        //sender.backgroundColor = .white
-        //sender.setTitleColor(.orange, for: .normal)
-        didSelect = true
         fristN = resultLabel?.text
+        
         resultLabel?.text = ""
         
         operations = (sender.titleLabel?.text)!
@@ -67,17 +61,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resultCal(_ sender: UIButton){
+        
         secondN = resultLabel?.text
-        print(secondN!)
+        
         resultNum = Calculation(operations, fristN, secondN)
+        
         resultLabel?.text = resultNum
+    }
+    
+    @IBAction func minusplus(_ sender: UIButton){
+        let minus = Int(resultLabel.text!)
+        if minus! > 0{
+            resultLabel.text = String(-minus!)
+        }else if minus! < 0 {
+            resultLabel.text?.removeFirst()
+        }
     }
     
     func Calculation(_ oper: String, _ firstNum: String?, _ secondNum: String?) -> String {
         
-        let result: Int
-        let first = Int(firstNum!)
-        let second = Int(secondNum!)
+        let result: Double
+        let first = Double(firstNum!)
+        let second = Double(secondNum!)
         
         switch oper {
             case "/":
