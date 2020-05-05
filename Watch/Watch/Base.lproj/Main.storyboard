@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7oR-p8-awq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Table View Controller-->
+        <scene sceneID="nRC-IM-seW">
+            <objects>
+                <tableViewController id="8wZ-Fe-QFl" customClass="MainTableViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rnr-tr-vQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세계시계" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NjC-dU-tCu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorldCell" rowHeight="100" id="1yB-uC-iro" customClass="MainTableViewCell" customModule="Watch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1yB-uC-iro" id="qML-eI-6it">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsm-K8-4kQ">
+                                            <rect key="frame" x="20" y="55" width="49" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efh-pL-KfL">
+                                            <rect key="frame" x="257" y="10" width="147" height="80"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘, +0시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-GR-Wsk">
+                                            <rect key="frame" x="20" y="11" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0YB-GR-Wsk" firstAttribute="top" secondItem="qML-eI-6it" secondAttribute="topMargin" id="9c7-db-ald"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Rsm-K8-4kQ" secondAttribute="bottom" id="IEs-sy-1AR"/>
+                                        <constraint firstItem="efh-pL-KfL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0YB-GR-Wsk" secondAttribute="trailing" constant="8" symbolic="YES" id="KIj-nW-dsl"/>
+                                        <constraint firstItem="Rsm-K8-4kQ" firstAttribute="leading" secondItem="qML-eI-6it" secondAttribute="leadingMargin" id="OqC-22-J3N"/>
+                                        <constraint firstItem="0YB-GR-Wsk" firstAttribute="leading" secondItem="qML-eI-6it" secondAttribute="leadingMargin" id="Z5f-Z6-Y6f"/>
+                                        <constraint firstItem="efh-pL-KfL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rsm-K8-4kQ" secondAttribute="trailing" constant="8" symbolic="YES" id="bUl-Ze-zuW"/>
+                                        <constraint firstAttribute="bottom" secondItem="efh-pL-KfL" secondAttribute="bottom" constant="10" id="drf-jd-tQi"/>
+                                        <constraint firstItem="efh-pL-KfL" firstAttribute="top" secondItem="qML-eI-6it" secondAttribute="top" constant="10" id="dtG-pZ-5Pl"/>
+                                        <constraint firstAttribute="trailing" secondItem="efh-pL-KfL" secondAttribute="trailing" constant="10" id="in7-No-1Qz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="currentClock" destination="efh-pL-KfL" id="Ge5-WI-oy6"/>
+                                    <outlet property="currentCountry" destination="Rsm-K8-4kQ" id="FAZ-I2-qza"/>
+                                    <outlet property="dayAndclock" destination="0YB-GR-Wsk" id="J1P-h7-QAo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8wZ-Fe-QFl" id="3wB-Fk-6JP"/>
+                            <outlet property="delegate" destination="8wZ-Fe-QFl" id="QOU-HF-eSj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7Dh-kF-j2X">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BDQ-GK-tAh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="X4v-cn-oY1">
+                            <connections>
+                                <segue destination="04t-i9-Pgp" kind="presentation" id="MB3-bH-upH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editCell" destination="BDQ-GK-tAh" id="p0F-uu-Due"/>
+                        <outlet property="plusCell" destination="X4v-cn-oY1" id="lXw-zt-41k"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spe-HY-xhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776.811594202899" y="150.66964285714286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NPV-G0-3Kd">
+            <objects>
+                <viewController id="04t-i9-Pgp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L6c-WT-3fP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-m2-bZe">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ULX-8W-i9l">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULX-8W-i9l" id="B9V-kS-RWG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="H8d-Tg-e4n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="H8d-Tg-e4n" firstAttribute="top" secondItem="Fvh-K4-cLY" secondAttribute="top" id="A99-sP-RhM"/>
+                            <constraint firstItem="Fvh-K4-cLY" firstAttribute="trailing" secondItem="S3R-m2-bZe" secondAttribute="trailing" id="CQB-3x-OT9"/>
+                            <constraint firstItem="S3R-m2-bZe" firstAttribute="top" secondItem="H8d-Tg-e4n" secondAttribute="bottom" id="FhY-Sl-uiQ"/>
+                            <constraint firstItem="Fvh-K4-cLY" firstAttribute="bottom" secondItem="S3R-m2-bZe" secondAttribute="bottom" id="mIc-d8-aqn"/>
+                            <constraint firstItem="H8d-Tg-e4n" firstAttribute="leading" secondItem="Fvh-K4-cLY" secondAttribute="leading" id="pmb-RJ-FiY"/>
+                            <constraint firstAttribute="trailing" secondItem="H8d-Tg-e4n" secondAttribute="trailing" id="qo0-C1-dIr"/>
+                            <constraint firstItem="S3R-m2-bZe" firstAttribute="leading" secondItem="Fvh-K4-cLY" secondAttribute="leading" id="xmD-3D-lQC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fvh-K4-cLY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98n-Gh-IBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3559.420289855073" y="148.66071428571428"/>
+        </scene>
+        <!--WorldClock-->
+        <scene sceneID="3sr-DS-1RZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioX-aw-61U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="WorldClock" image="clock" catalog="system" id="m2U-Kw-cCB"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f08-Zi-W3J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8wZ-Fe-QFl" kind="relationship" relationship="rootViewController" id="luP-90-u5o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-iz-dKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942.0289855072465" y="151.33928571428569"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="52q-QB-gp1">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7oR-p8-awq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="59Y-Br-JRC">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ioX-aw-61U" kind="relationship" relationship="viewControllers" id="xcA-Mm-RBt"/>
+                        <segue destination="wks-vs-UUk" kind="relationship" relationship="viewControllers" id="RYw-pC-RJe"/>
+                        <segue destination="1cE-QD-oqk" kind="relationship" relationship="viewControllers" id="DDm-Qd-U1M"/>
+                        <segue destination="RYe-dN-gbh" kind="relationship" relationship="viewControllers" id="fNG-AR-TlK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAo-3t-Gmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="531"/>
+        </scene>
+        <!--Alram Table View Controller-->
+        <scene sceneID="0hw-GT-2CL">
+            <objects>
+                <tableViewController id="oRP-t8-Rx3" customClass="AlramTableViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TwI-0c-gC7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IG1-YZ-eZg">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IG1-YZ-eZg" id="upX-ll-OEk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oRP-t8-Rx3" id="qWN-IP-Z6j"/>
+                            <outlet property="delegate" destination="oRP-t8-Rx3" id="t5y-EC-pKJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bwx-0P-xdY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKR-qF-WbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="883"/>
+        </scene>
+        <!--TImer-->
+        <scene sceneID="UDy-x7-m6r">
+            <objects>
+                <viewController id="RYe-dN-gbh" customClass="TimerViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nav-sF-ocd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rD0-2i-8m4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="TImer" image="timer" catalog="system" id="OFl-hW-ztn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ef-Ai-Viy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="1448"/>
+        </scene>
+        <!--StopWatch-->
+        <scene sceneID="Dft-P5-gFJ">
+            <objects>
+                <viewController id="1cE-QD-oqk" customClass="stopWatchViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="71C-T8-ghe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="B2X-Wg-mmN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="StopWatch" image="stopwatch" catalog="system" id="166-er-MWm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVJ-4i-Ypu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="1448"/>
+        </scene>
+        <!--Alram-->
+        <scene sceneID="5wy-eV-0vT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wks-vs-UUk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alram" image="bell" catalog="system" id="RMN-nm-pED"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rfs-d1-496"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nvX-CR-cgS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oRP-t8-Rx3" kind="relationship" relationship="rootViewController" id="XM7-z1-PBL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-Yr-5OY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="883"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

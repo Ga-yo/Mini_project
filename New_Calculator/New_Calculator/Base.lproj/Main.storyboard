@@ -255,6 +255,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="number" destination="AHm-cs-uhX" id="vjn-Fe-MmI"/>
                         <outlet property="operation" destination="ao1-IG-no1" id="45j-du-md7"/>
                         <outlet property="resetAC" destination="IHH-OT-AAS" id="lNg-vl-ZWk"/>
                         <outlet property="resultLabel" destination="rSM-na-aPF" id="NfW-WI-ZTe"/>

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var number: UIButton!
     @IBOutlet weak var operation: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resetAC: UIButton!
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         resultLabel.text = "0"
-
     }
 
     
