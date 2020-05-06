@@ -332,10 +332,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-hM-7f9">
                                 <rect key="frame" x="336" y="388" width="30" height="30"/>
                                 <state key="normal" title="시작"/>
+                                <connections>
+                                    <action selector="pressStart:" destination="1cE-QD-oqk" eventType="touchUpInside" id="1rb-SH-u9H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO9-zK-xUN">
                                 <rect key="frame" x="51" y="388" width="30" height="30"/>
                                 <state key="normal" title="랩"/>
+                                <connections>
+                                    <action selector="pressLap:" destination="1cE-QD-oqk" eventType="touchUpInside" id="9zV-SU-Gov"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-rV-Kxl">
                                 <rect key="frame" x="0.0" y="472" width="414" height="341"/>
@@ -344,7 +350,7 @@
                                     <constraint firstAttribute="height" constant="341" id="AIQ-b7-tNO"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tcO-s7-NyK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopwatchCell" id="tcO-s7-NyK">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcO-s7-NyK" id="L9C-Jq-Nxq">
@@ -370,6 +376,12 @@
                         <viewLayoutGuide key="safeArea" id="B2X-Wg-mmN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="StopWatch" image="stopwatch" catalog="system" id="166-er-MWm"/>
+                    <connections>
+                        <outlet property="lapButton" destination="WO9-zK-xUN" id="Gnz-zo-MRw"/>
+                        <outlet property="startButton" destination="u2f-hM-7f9" id="F89-RJ-Mse"/>
+                        <outlet property="tableView" destination="NvX-rV-Kxl" id="PX8-Nz-Xaf"/>
+                        <outlet property="timeLabel" destination="mvN-gb-9q3" id="EGf-qC-u1j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVJ-4i-Ypu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
