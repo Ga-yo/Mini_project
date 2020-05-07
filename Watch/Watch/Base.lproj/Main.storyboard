@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="IG1-YZ-eZg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="IG1-YZ-eZg" customClass="AlramTableViewCell" customModule="Watch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IG1-YZ-eZg" id="upX-ll-OEk">
@@ -202,7 +202,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="D1S-rX-nU4" kind="presentation" id="dcX-Ap-k9t"/>
+                                    <outlet property="clockLabel" destination="0qc-ni-vrk" id="r0c-7W-WiY"/>
+                                    <outlet property="onoffAlram" destination="3Or-j8-AyJ" id="LN3-jB-MAG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -212,18 +213,30 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="bwx-0P-xdY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Jyp-P9-Iqe"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eMo-QO-UcM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Jyp-P9-Iqe">
+                            <connections>
+                                <segue destination="D1S-rX-nU4" kind="presentation" id="GaX-v2-fUO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eMo-QO-UcM">
+                            <connections>
+                                <segue destination="D1S-rX-nU4" kind="presentation" id="axH-ge-fPo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editBtn" destination="Jyp-P9-Iqe" id="6zw-c8-Zob"/>
+                        <outlet property="plusBtn" destination="eMo-QO-UcM" id="hrs-rz-z7D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKR-qF-WbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2777" y="883"/>
         </scene>
-        <!--View Controller-->
+        <!--Alram Detail View Controller-->
         <scene sceneID="4Fe-9L-9M2">
             <objects>
-                <viewController id="D1S-rX-nU4" sceneMemberID="viewController">
+                <viewController id="D1S-rX-nU4" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="go0-L5-BGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,11 +260,11 @@
                                 <rect key="frame" x="0.0" y="260" width="414" height="189"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bEY-53-aPV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="bEY-53-aPV">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEY-53-aPV" id="5Pw-R9-eeY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -274,6 +287,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aPM-y2-m0c"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="2CS-g4-WSF" id="YAs-mT-QpA"/>
+                        <outlet property="clockPicker" destination="vNy-qh-qdh" id="0pP-bV-kAX"/>
+                        <outlet property="saveBtn" destination="GqI-ae-F5J" id="seV-Jw-Db0"/>
+                        <outlet property="tableView" destination="fXr-1O-umA" id="cFD-y6-XFy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUD-8D-0FD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,6 +445,9 @@
             <point key="canvasLocation" x="1942" y="883"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="axH-ge-fPo"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="clock" catalog="system" width="128" height="121"/>
