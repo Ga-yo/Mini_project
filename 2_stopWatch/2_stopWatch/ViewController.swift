@@ -10,7 +10,7 @@ import UIKit
 
 class customCell: UITableViewCell {
     @IBOutlet weak var tableViewCell: UILabel!
-    
+
     override func prepareForReuse() { super.prepareForReuse()
         tableViewCell.text = "\(lapTime)"
     }

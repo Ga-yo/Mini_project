@@ -14,7 +14,7 @@ class stopWatchViewController: UIViewController {
     var LapWatch: stopWatch = stopWatch()
     
     var isPlay: Bool = true //시작
-    var saveTime: [String] = []
+    var saveTime: [Double] = []
     var cellCount: Int = 0
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,13 +25,15 @@ class stopWatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     @IBAction func pressStart(_ sender: UIButton){
         if isPlay { //시작버튼을 누르면
             StopWatch.time = Timer.scheduledTimer(timeInterval: 0.035, target: self, selector: #selector(repeatTime), userInfo: nil, repeats: true)
-        
+            
             isPlay = false
             
             changeButton(startButton, "Stop")
@@ -50,9 +52,7 @@ class stopWatchViewController: UIViewController {
     
     @IBAction func pressLap(_ sender: UIButton){
         if !isPlay{
-            print("\(StopWatch.time)")
-            saveTime.append("\(StopWatch.time)")
-            
+            saveTime.append(StopWatch.count)
             tableView.reloadData()
             isPlay = false
         }else{
@@ -60,6 +60,7 @@ class stopWatchViewController: UIViewController {
             timeLabel.text = "00:00.00"
             StopWatch.count = 0.0
             saveTime.removeAll()
+            tableView.reloadData()
         }
     }
     func changeButton(_ button: UIButton, _ title: String){
@@ -69,7 +70,7 @@ class stopWatchViewController: UIViewController {
     
     @objc func repeatTime(){
         StopWatch.count = StopWatch.count + 0.035
-        timeLabel.text = String(format: "%.2lf", StopWatch.count)
+        timeLabel.text = String(format: "%.2f", StopWatch.count)
     }
     
     @objc func whenStopTime(){
@@ -94,14 +95,15 @@ extension stopWatchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stopwatchCell", for: indexPath)
+//
+//        if indexPath.row == 0 {
+//            cell.detailTextLabel?.text = "셀에 안들어옴"
+//        } else {
+//            cell.detailTextLabel?.text = "Lap \(StopWatch.count - (indexPath as NSIndexPath).row)"
+//        }
+//
         
-        if indexPath.row == 0 {
-            cell.detailTextLabel?.text = "셀에 안들어옴"
-        } else {
-            cell.detailTextLabel?.text = saveTime[indexPath.row]
-        }
-        
-        cell.textLabel?.text = saveTime[indexPath.row]
+        cell.textLabel?.text = String(format: "%.2f", saveTime[indexPath.row])
         
         return cell
     }
