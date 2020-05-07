@@ -289,6 +289,9 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-Fo-vle">
                                 <rect key="frame" x="0.0" y="84" width="414" height="216"/>
+                                <connections>
+                                    <action selector="chooseTime:" destination="RYe-dN-gbh" eventType="touchUpInside" id="s87-NQ-v1A"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-xf-qM0">
                                 <rect key="frame" x="335" y="350" width="30" height="30"/>
@@ -300,6 +303,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="취소"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swk-Jg-UuR">
+                                <rect key="frame" x="70" y="543" width="275" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -310,6 +320,12 @@
                         <viewLayoutGuide key="safeArea" id="rD0-2i-8m4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TImer" image="timer" catalog="system" id="OFl-hW-ztn"/>
+                    <connections>
+                        <outlet property="cancelBtn" destination="SJx-UI-44U" id="6XB-xI-XKs"/>
+                        <outlet property="showTime" destination="swk-Jg-UuR" id="MxU-T2-rbh"/>
+                        <outlet property="startBtn" destination="H8c-xf-qM0" id="RHB-vi-TTg"/>
+                        <outlet property="timeCheck" destination="5J4-Fo-vle" id="WJi-4l-bbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ef-Ai-Viy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,8 +339,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-gb-9q3">
-                                <rect key="frame" x="92" y="256" width="230" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-gb-9q3">
+                                <rect key="frame" x="63" y="256" width="275" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -366,10 +382,11 @@
                             <constraint firstItem="NvX-rV-Kxl" firstAttribute="leading" secondItem="B2X-Wg-mmN" secondAttribute="leading" id="4L1-9K-KSP"/>
                             <constraint firstItem="WO9-zK-xUN" firstAttribute="leading" secondItem="B2X-Wg-mmN" secondAttribute="leading" constant="51" id="EXQ-Y5-XUD"/>
                             <constraint firstItem="u2f-hM-7f9" firstAttribute="baseline" secondItem="WO9-zK-xUN" secondAttribute="baseline" id="Eou-fg-1FC"/>
-                            <constraint firstItem="NvX-rV-Kxl" firstAttribute="centerX" secondItem="mvN-gb-9q3" secondAttribute="centerX" id="b32-ya-6y9"/>
-                            <constraint firstItem="mvN-gb-9q3" firstAttribute="top" secondItem="B2X-Wg-mmN" secondAttribute="top" constant="212" id="fZl-76-dA7"/>
+                            <constraint firstItem="mvN-gb-9q3" firstAttribute="leading" secondItem="B2X-Wg-mmN" secondAttribute="leading" constant="63" id="UXu-ux-BQ2"/>
+                            <constraint firstItem="mvN-gb-9q3" firstAttribute="top" secondItem="B2X-Wg-mmN" secondAttribute="top" constant="212" id="dcv-ag-yXN"/>
                             <constraint firstItem="u2f-hM-7f9" firstAttribute="top" secondItem="B2X-Wg-mmN" secondAttribute="top" constant="344" id="gIw-av-I7w"/>
                             <constraint firstItem="B2X-Wg-mmN" firstAttribute="trailing" secondItem="NvX-rV-Kxl" secondAttribute="trailing" id="grC-eb-2hS"/>
+                            <constraint firstItem="B2X-Wg-mmN" firstAttribute="trailing" secondItem="mvN-gb-9q3" secondAttribute="trailing" constant="76" id="nyy-kA-pl2"/>
                             <constraint firstItem="B2X-Wg-mmN" firstAttribute="trailing" secondItem="u2f-hM-7f9" secondAttribute="trailing" constant="48" id="ufc-zr-bAm"/>
                             <constraint firstItem="B2X-Wg-mmN" firstAttribute="bottom" secondItem="NvX-rV-Kxl" secondAttribute="bottom" id="zNY-Te-fYZ"/>
                         </constraints>

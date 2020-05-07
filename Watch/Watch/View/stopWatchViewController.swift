@@ -25,11 +25,17 @@ class stopWatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        customButton(startButton)
+        customButton(lapButton)
+    }
     @IBAction func pressStart(_ sender: UIButton){
         if isPlay { //시작버튼을 누르면
             StopWatch.time = Timer.scheduledTimer(timeInterval: 0.035, target: self, selector: #selector(repeatTime), userInfo: nil, repeats: true)
@@ -63,13 +69,27 @@ class stopWatchViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
     func changeButton(_ button: UIButton, _ title: String){
         print("왕")
         button.setTitle(title, for: .normal)
     }
     
+    func customButton(_ button: UIButton){
+        button.layer.cornerRadius = 100
+        button.layer.borderColor = UIColor.black.cgColor
+        
+        if isPlay{
+            button.backgroundColor = UIColor.red
+        }else{
+            button.backgroundColor = UIColor.blue
+        }
+    }
+    
     @objc func repeatTime(){
         StopWatch.count = StopWatch.count + 0.035
+        //String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
+
         timeLabel.text = String(format: "%.2f", StopWatch.count)
     }
     

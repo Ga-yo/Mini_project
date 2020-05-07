@@ -10,13 +10,19 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var timeCheck: UIDatePicker!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var showTime: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
+    @IBAction func chooseTime(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
