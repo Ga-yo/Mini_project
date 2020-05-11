@@ -1,20 +1,15 @@
 //
-//  AlramDetailViewController.swift
+//  AlramlabelViewController.swift
 //  Watch
 //
-//  Created by 이가영 on 2020/05/07.
+//  Created by 이가영 on 2020/05/11.
 //  Copyright © 2020 이가영. All rights reserved.
 //
 
 import UIKit
 
-class AlramDetailViewController: UIViewController {
+class AlramlabelViewController: UIViewController {
 
-    @IBOutlet weak var clockPicker: UIDatePicker!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var saveBtn: UIBarButtonItem!
-    @IBOutlet weak var cancelBtn: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

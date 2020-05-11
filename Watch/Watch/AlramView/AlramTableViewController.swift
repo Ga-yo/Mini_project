@@ -8,6 +8,8 @@
 
 import UIKit
 
+var Alram: AlramMD?
+
 class AlramTableViewController: UITableViewController {
 
     @IBOutlet weak var plusBtn: UIBarButtonItem!

@@ -163,7 +163,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="ioX-aw-61U" kind="relationship" relationship="viewControllers" id="xcA-Mm-RBt"/>
-                        <segue destination="wks-vs-UUk" kind="relationship" relationship="viewControllers" id="RYw-pC-RJe"/>
                         <segue destination="1cE-QD-oqk" kind="relationship" relationship="viewControllers" id="DDm-Qd-U1M"/>
                         <segue destination="RYe-dN-gbh" kind="relationship" relationship="viewControllers" id="fNG-AR-TlK"/>
                     </connections>
@@ -171,132 +170,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAo-3t-Gmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="531"/>
-        </scene>
-        <!--Alram Table View Controller-->
-        <scene sceneID="0hw-GT-2CL">
-            <objects>
-                <tableViewController id="oRP-t8-Rx3" customClass="AlramTableViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TwI-0c-gC7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="IG1-YZ-eZg" customClass="AlramTableViewCell" customModule="Watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IG1-YZ-eZg" id="upX-ll-OEk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Or-j8-AyJ">
-                                            <rect key="frame" x="345" y="35" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qc-ni-vrk">
-                                            <rect key="frame" x="20" y="23" width="125" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="clockLabel" destination="0qc-ni-vrk" id="r0c-7W-WiY"/>
-                                    <outlet property="onoffAlram" destination="3Or-j8-AyJ" id="LN3-jB-MAG"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oRP-t8-Rx3" id="qWN-IP-Z6j"/>
-                            <outlet property="delegate" destination="oRP-t8-Rx3" id="t5y-EC-pKJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="bwx-0P-xdY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Jyp-P9-Iqe">
-                            <connections>
-                                <segue destination="D1S-rX-nU4" kind="presentation" id="GaX-v2-fUO"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eMo-QO-UcM">
-                            <connections>
-                                <segue destination="D1S-rX-nU4" kind="presentation" id="axH-ge-fPo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="editBtn" destination="Jyp-P9-Iqe" id="6zw-c8-Zob"/>
-                        <outlet property="plusBtn" destination="eMo-QO-UcM" id="hrs-rz-z7D"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKR-qF-WbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2777" y="883"/>
-        </scene>
-        <!--Alram Detail View Controller-->
-        <scene sceneID="4Fe-9L-9M2">
-            <objects>
-                <viewController id="D1S-rX-nU4" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="go0-L5-BGd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFs-dx-JpR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="S0X-6Z-qA0"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="x4h-WU-0Qz">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2CS-g4-WSF"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GqI-ae-F5J"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vNy-qh-qdh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
-                            </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fXr-1O-umA">
-                                <rect key="frame" x="0.0" y="260" width="414" height="189"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="bEY-53-aPV">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEY-53-aPV" id="5Pw-R9-eeY">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="MFs-dx-JpR" firstAttribute="top" secondItem="aPM-y2-m0c" secondAttribute="top" id="3EV-h1-hpN"/>
-                            <constraint firstItem="fXr-1O-umA" firstAttribute="top" secondItem="vNy-qh-qdh" secondAttribute="bottom" id="5YS-yW-83P"/>
-                            <constraint firstItem="aPM-y2-m0c" firstAttribute="bottom" secondItem="fXr-1O-umA" secondAttribute="bottom" constant="359" id="E84-Kz-lWc"/>
-                            <constraint firstItem="MFs-dx-JpR" firstAttribute="trailing" secondItem="vNy-qh-qdh" secondAttribute="trailing" id="EcY-hc-iD0"/>
-                            <constraint firstItem="MFs-dx-JpR" firstAttribute="leading" secondItem="vNy-qh-qdh" secondAttribute="leading" id="JRh-dC-zx4"/>
-                            <constraint firstItem="vNy-qh-qdh" firstAttribute="trailing" secondItem="aPM-y2-m0c" secondAttribute="trailing" id="QoC-eu-wTb"/>
-                            <constraint firstItem="aPM-y2-m0c" firstAttribute="trailing" secondItem="fXr-1O-umA" secondAttribute="trailing" id="e6o-76-0iA"/>
-                            <constraint firstItem="fXr-1O-umA" firstAttribute="leading" secondItem="aPM-y2-m0c" secondAttribute="leading" id="min-jS-SKt"/>
-                            <constraint firstItem="fXr-1O-umA" firstAttribute="top" secondItem="vNy-qh-qdh" secondAttribute="bottom" id="wHH-kc-8W1"/>
-                            <constraint firstItem="vNy-qh-qdh" firstAttribute="top" secondItem="MFs-dx-JpR" secondAttribute="bottom" id="xO3-2c-HQR"/>
-                            <constraint firstItem="vNy-qh-qdh" firstAttribute="leading" secondItem="aPM-y2-m0c" secondAttribute="leading" id="ztW-T6-u8P"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aPM-y2-m0c"/>
-                    </view>
-                    <connections>
-                        <outlet property="cancelBtn" destination="2CS-g4-WSF" id="YAs-mT-QpA"/>
-                        <outlet property="clockPicker" destination="vNy-qh-qdh" id="0pP-bV-kAX"/>
-                        <outlet property="saveBtn" destination="GqI-ae-F5J" id="seV-Jw-Db0"/>
-                        <outlet property="tableView" destination="fXr-1O-umA" id="cFD-y6-XFy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aUD-8D-0FD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3557.971014492754" y="882.58928571428567"/>
         </scene>
         <!--TImer-->
         <scene sceneID="UDy-x7-m6r">
@@ -423,33 +296,8 @@
             </objects>
             <point key="canvasLocation" x="166.66666666666669" y="1447.7678571428571"/>
         </scene>
-        <!--Alram-->
-        <scene sceneID="5wy-eV-0vT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wks-vs-UUk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alram" image="bell" catalog="system" id="RMN-nm-pED"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="rfs-d1-496"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nvX-CR-cgS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oRP-t8-Rx3" kind="relationship" relationship="rootViewController" id="XM7-z1-PBL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-Yr-5OY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1942" y="883"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="axH-ge-fPo"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="stopwatch" catalog="system" width="121" height="128"/>
         <image name="timer" catalog="system" width="128" height="121"/>

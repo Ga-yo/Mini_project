@@ -14,13 +14,11 @@
 		EB12C9D72461275000D1D6C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB12C9D52461275000D1D6C7 /* LaunchScreen.storyboard */; };
 		EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */; };
 		EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */; };
-		EB1D38B0246138640025F9DC /* AlramTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38AF246138640025F9DC /* AlramTableViewController.swift */; };
 		EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */; };
 		EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B3246138C10025F9DC /* TimerViewController.swift */; };
 		EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64158824613FF700AA3F14 /* MainDetailViewController.swift */; };
 		EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */; };
 		EBA7CF8B24640567008CEED7 /* AlramMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF8A24640567008CEED7 /* AlramMD.swift */; };
-		EBA7CF8D246409FE008CEED7 /* AlramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF8C246409FE008CEED7 /* AlramDetailViewController.swift */; };
 		EBCC38352462CB7000F30360 /* stopWatchMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC38342462CB7000F30360 /* stopWatchMD.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,13 +32,11 @@
 		EB12C9D82461275000D1D6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		EB1D38AF246138640025F9DC /* AlramTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewController.swift; sourceTree = "<group>"; };
 		EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchViewController.swift; sourceTree = "<group>"; };
 		EB1D38B3246138C10025F9DC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		EB64158824613FF700AA3F14 /* MainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
 		EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewCell.swift; sourceTree = "<group>"; };
 		EBA7CF8A24640567008CEED7 /* AlramMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramMD.swift; sourceTree = "<group>"; };
-		EBA7CF8C246409FE008CEED7 /* AlramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramDetailViewController.swift; sourceTree = "<group>"; };
 		EBCC38342462CB7000F30360 /* stopWatchMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchMD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,8 +89,6 @@
 				EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */,
 				EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */,
 				EB64158824613FF700AA3F14 /* MainDetailViewController.swift */,
-				EBA7CF8C246409FE008CEED7 /* AlramDetailViewController.swift */,
-				EB1D38AF246138640025F9DC /* AlramTableViewController.swift */,
 				EB1D38B3246138C10025F9DC /* TimerViewController.swift */,
 			);
 			path = View;
@@ -194,10 +188,8 @@
 				EBA7CF8B24640567008CEED7 /* AlramMD.swift in Sources */,
 				EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */,
 				EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */,
-				EBA7CF8D246409FE008CEED7 /* AlramDetailViewController.swift in Sources */,
 				EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */,
 				EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */,
-				EB1D38B0246138640025F9DC /* AlramTableViewController.swift in Sources */,
 				EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */,
 				EB12C9CD2461274D00D1D6C7 /* SceneDelegate.swift in Sources */,
 				EBCC38352462CB7000F30360 /* stopWatchMD.swift in Sources */,
