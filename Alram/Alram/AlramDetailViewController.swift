@@ -17,7 +17,7 @@ class AlramDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -59,9 +59,10 @@ extension AlramDetailViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "repeatcell", for: indexPath)
-
-        cell.textLabel?.text = "반복"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reapetcell", for: indexPath)
+        let list: [String] = ["반복", "레이블"]
+        
+        cell.textLabel?.text = list[indexPath.row]
         
         return cell
     }

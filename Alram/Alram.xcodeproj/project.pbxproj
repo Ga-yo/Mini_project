@@ -14,6 +14,9 @@
 		EB1C8CBF24694E0B004CE016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB1C8CBD24694E0B004CE016 /* LaunchScreen.storyboard */; };
 		EB1C8CC724694F72004CE016 /* AlramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C8CC624694F72004CE016 /* AlramDetailViewController.swift */; };
 		EB1C8CC924694F96004CE016 /* repeatCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C8CC824694F96004CE016 /* repeatCellViewController.swift */; };
+		EB1C8CCB24695039004CE016 /* AlramMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C8CCA24695039004CE016 /* AlramMD.swift */; };
+		EB1C8CCD2469505D004CE016 /* AlramTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C8CCC2469505D004CE016 /* AlramTableViewController.swift */; };
+		EB1C8CCF246952B8004CE016 /* AlramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C8CCE246952B7004CE016 /* AlramTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		EB1C8CC024694E0B004CE016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1C8CC624694F72004CE016 /* AlramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramDetailViewController.swift; sourceTree = "<group>"; };
 		EB1C8CC824694F96004CE016 /* repeatCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repeatCellViewController.swift; sourceTree = "<group>"; };
+		EB1C8CCA24695039004CE016 /* AlramMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramMD.swift; sourceTree = "<group>"; };
+		EB1C8CCC2469505D004CE016 /* AlramTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewController.swift; sourceTree = "<group>"; };
+		EB1C8CCE246952B7004CE016 /* AlramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,14 @@
 		EB1C8CB124694E07004CE016 /* Alram */ = {
 			isa = PBXGroup;
 			children = (
+				EB1C8CCA24695039004CE016 /* AlramMD.swift */,
 				EB1C8CB224694E07004CE016 /* AppDelegate.swift */,
+				EB1C8CCC2469505D004CE016 /* AlramTableViewController.swift */,
 				EB1C8CC624694F72004CE016 /* AlramDetailViewController.swift */,
 				EB1C8CC824694F96004CE016 /* repeatCellViewController.swift */,
 				EB1C8CB424694E07004CE016 /* SceneDelegate.swift */,
 				EB1C8CB824694E07004CE016 /* Main.storyboard */,
+				EB1C8CCE246952B7004CE016 /* AlramTableViewCell.swift */,
 				EB1C8CBB24694E0B004CE016 /* Assets.xcassets */,
 				EB1C8CBD24694E0B004CE016 /* LaunchScreen.storyboard */,
 				EB1C8CC024694E0B004CE016 /* Info.plist */,
@@ -141,9 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1C8CCF246952B8004CE016 /* AlramTableViewCell.swift in Sources */,
 				EB1C8CB324694E07004CE016 /* AppDelegate.swift in Sources */,
+				EB1C8CCD2469505D004CE016 /* AlramTableViewController.swift in Sources */,
 				EB1C8CC924694F96004CE016 /* repeatCellViewController.swift in Sources */,
 				EB1C8CB524694E07004CE016 /* SceneDelegate.swift in Sources */,
+				EB1C8CCB24695039004CE016 /* AlramMD.swift in Sources */,
 				EB1C8CC724694F72004CE016 /* AlramDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

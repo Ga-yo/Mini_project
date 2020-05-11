@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DIJ-Y0-6fV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="pzC-tA-v68" customClass="AlramTableViewCell" customModule="Watch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alramlistCel" rowHeight="100" id="pzC-tA-v68" customClass="AlramTableViewCell" customModule="Watch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzC-tA-v68" id="gdx-zy-QbS">
@@ -51,14 +51,13 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TMZ-rS-72O"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
                             <connections>
-                                <action selector="pressPlus:" destination="W1i-NR-6xY" id="ll4-LV-02I"/>
-                                <segue destination="lhq-mY-Qdi" kind="modal" id="54D-4H-rUM"/>
+                                <segue destination="lhq-mY-Qdi" kind="showDetail" id="13T-Dd-9Cb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editBtn" destination="TMZ-rS-72O" id="3d9-BH-TMH"/>
-                        <outlet property="plusBtn" destination="Dao-PS-NXv" id="ocN-Hp-gId"/>
+                        <outlet property="editBtn" destination="TMZ-rS-72O" id="s9d-H2-7hX"/>
+                        <outlet property="plusBtn" destination="Dao-PS-NXv" id="q0y-jA-8AD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgN-YR-7BY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -68,7 +67,7 @@
         <!--SecondViewController-->
         <scene sceneID="HGI-E2-ou7">
             <objects>
-                <viewController restorationIdentifier="SecondViewController" storyboardIdentifier="SecondViewController" title="SecondViewController" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SecondViewController" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5uA-OD-gSW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,17 +107,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="fSp-Rm-Zev" kind="show" id="LUf-Fd-Zgh"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="labelcell" id="t0m-lF-fC8">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0m-lF-fC8" id="1LP-nL-J6G">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="AEj-dh-R34" kind="show" id="8AH-Kf-8GL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,11 +185,11 @@
             <objects>
                 <viewController id="AEj-dh-R34" customClass="AlramlabelViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TSi-F5-zIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEU-Ub-nve">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <textField key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2gX-rJ-SmW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
