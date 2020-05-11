@@ -14,8 +14,11 @@ class AlramrepeatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        repeatTable.reloadData()
         // Do any additional setup after loading the view.
+        self.repeatTable.delegate = self
+        self.repeatTable.dataSource = self
     }
     
     @IBOutlet weak var repeatTable: UITableView!
@@ -46,5 +49,14 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = repeatTable.cellForRow(at: indexPath){
+            if cell.accessoryType == .checkmark{
+                cell.accessoryType = .none
+            }else{
+                cell.accessoryType = .checkmark
+            }
+        }
+    }
     
 }

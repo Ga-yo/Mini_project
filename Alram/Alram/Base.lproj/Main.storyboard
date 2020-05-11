@@ -51,7 +51,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TMZ-rS-72O"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
                             <connections>
-                                <segue destination="lhq-mY-Qdi" kind="showDetail" id="13T-Dd-9Cb"/>
+                                <segue destination="lhq-mY-Qdi" kind="show" id="E8A-cF-DxO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,19 +67,23 @@
         <!--SecondViewController-->
         <scene sceneID="HGI-E2-ou7">
             <objects>
-                <viewController title="SecondViewController" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5uA-OD-gSW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-w6-6qt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eXL-9Q-ucN"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="z32-PJ-KCt">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CfM-bd-VQj"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CfM-bd-VQj">
+                                            <connections>
+                                                <action selector="cancelData:" destination="lhq-mY-Qdi" id="SXi-n0-DdB"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xmK-vu-cOv">
                                             <connections>
                                                 <action selector="SaveData:" destination="lhq-mY-Qdi" id="9Vy-cb-4n8"/>
@@ -89,13 +93,13 @@
                                 </items>
                             </navigationBar>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xsr-8J-a5l">
-                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="216"/>
                                 <connections>
                                     <action selector="ChooseDate:" destination="lhq-mY-Qdi" eventType="valueChanged" id="Nrl-Qs-qZR"/>
                                 </connections>
                             </datePicker>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3xU-08-zPZ">
-                                <rect key="frame" x="0.0" y="260" width="414" height="189"/>
+                                <rect key="frame" x="0.0" y="348" width="414" height="106"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reapetcell" id="TMd-XH-n5d">
@@ -106,7 +110,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fSp-Rm-Zev" kind="show" id="LUf-Fd-Zgh"/>
+                                            <segue destination="fSp-Rm-Zev" kind="show" id="Lw8-7h-sKI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,6 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5VL-A7-BYi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UZj-pu-fqS"/>
                     <connections>
                         <outlet property="cancelBtn" destination="CfM-bd-VQj" id="hJ5-75-j6o"/>
                         <outlet property="clockPicker" destination="Xsr-8J-a5l" id="Ku8-FE-UjH"/>
@@ -144,11 +149,11 @@
             <objects>
                 <viewController id="fSp-Rm-Zev" customClass="AlramrepeatViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUX-oZ-kym">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-1o-2q5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repeat" id="cWV-OZ-LgG">
@@ -178,41 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSK-dq-0wE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4329" y="591"/>
-        </scene>
-        <!--Alramlabel View Controller-->
-        <scene sceneID="czi-kO-fpE">
-            <objects>
-                <viewController id="AEj-dh-R34" customClass="AlramlabelViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TSi-F5-zIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEU-Ub-nve">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <textField key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2gX-rJ-SmW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="cJo-2Y-oD7" firstAttribute="trailing" secondItem="kEU-Ub-nve" secondAttribute="trailing" id="5ep-ur-6Yy"/>
-                            <constraint firstItem="kEU-Ub-nve" firstAttribute="top" secondItem="cJo-2Y-oD7" secondAttribute="top" id="Rg9-Ew-tUX"/>
-                            <constraint firstItem="cJo-2Y-oD7" firstAttribute="bottom" secondItem="kEU-Ub-nve" secondAttribute="bottom" id="Tei-55-X1p"/>
-                            <constraint firstItem="kEU-Ub-nve" firstAttribute="leading" secondItem="cJo-2Y-oD7" secondAttribute="leading" id="cxs-on-xHw"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="cJo-2Y-oD7"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="S2F-g9-tFt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kai-xD-GKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4329" y="1292"/>
+            <point key="canvasLocation" x="4330" y="883"/>
         </scene>
         <!--Alram-->
         <scene sceneID="vyo-h8-Zia">

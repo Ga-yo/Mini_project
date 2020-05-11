@@ -25,9 +25,12 @@ class AlramDetailViewController: UIViewController {
     
 
     @IBAction func SaveData(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func cancelData(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func ChooseDate(_ sender: UIDatePicker) {
         clockPicker.addTarget(nil, action: #selector(change), for: .valueChanged)
@@ -55,14 +58,13 @@ class AlramDetailViewController: UIViewController {
 
 extension AlramDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reapetcell", for: indexPath)
-        let list: [String] = ["반복", "레이블"]
         
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = "반복"
         
         return cell
     }
