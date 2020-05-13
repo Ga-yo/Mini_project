@@ -10,12 +10,12 @@ import Foundation
 
 struct AlramMD {
     var clock: String
-    var repeatAlram: String
+    var repeatAlram: [String]
     var nameAlram: String
 
-//    init(clock: String, repeatAlram: String, nameAlram: String) {
-//        self.clock = clock
-//        self.repeatAlram = repeatAlram
-//        self.nameAlram = nameAlram
-//    }
+    init(clock: String, repeatAlram: [String], nameAlram: String) {
+        self.clock = clock
+        self.repeatAlram = repeatAlram
+        self.nameAlram = nameAlram
+    }
 }

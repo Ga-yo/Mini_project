@@ -25,6 +25,15 @@ class AlramDetailViewController: UIViewController {
     
 
     @IBAction func SaveData(_ sender: UIBarButtonItem) {
+        if Alram?.clock == nil{
+            let alert = UIAlertController(title: "잠깐!", message: "시간이 지정되지 않았거나 반복회수를 지정하지 않았습니다.", preferredStyle: .alert)
+            let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
+
+            alert.addAction(alertaction)
+
+            present(alert, animated: true, completion: nil)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -52,6 +61,7 @@ class AlramDetailViewController: UIViewController {
         dateformatter.timeStyle = .short
         let date = dateformatter.string(from: clockPicker.date)
         Alram?.clock = date
+        print(date)
     }
 
 }

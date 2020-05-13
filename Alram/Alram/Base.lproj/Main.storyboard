@@ -10,13 +10,13 @@
         <!--Alram Table View Controller-->
         <scene sceneID="IoH-si-o71">
             <objects>
-                <tableViewController id="W1i-NR-6xY" customClass="AlramTableViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="W1i-NR-6xY" customClass="AlramTableViewController" customModule="Alram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jE0-77-aCF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alramlistCel" rowHeight="100" id="pzC-tA-v68" customClass="AlramTableViewCell" customModule="Watch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alramlistCel" rowHeight="100" id="pzC-tA-v68" customClass="AlramTableViewCell" customModule="Alram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzC-tA-v68" id="gdx-zy-QbS">
@@ -67,7 +67,7 @@
         <!--SecondViewController-->
         <scene sceneID="HGI-E2-ou7">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lhq-mY-Qdi" customClass="AlramDetailViewController" customModule="Alram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5uA-OD-gSW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
         <!--Alramrepeat View Controller-->
         <scene sceneID="q6g-yK-VJQ">
             <objects>
-                <viewController id="fSp-Rm-Zev" customClass="AlramrepeatViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fSp-Rm-Zev" customClass="AlramrepeatViewController" customModule="Alram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUX-oZ-kym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ems-tk-6AE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PP2-Iy-k2s"/>
+                    <navigationItem key="navigationItem" id="PP2-Iy-k2s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Oxu-Eq-NwF">
+                            <connections>
+                                <action selector="backBtn:" destination="fSp-Rm-Zev" id="UuA-FV-Bbb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="repeatTable" destination="BNS-1o-2q5" id="J1p-E3-2gx"/>
                     </connections>

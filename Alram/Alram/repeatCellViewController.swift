@@ -33,6 +33,13 @@ class AlramrepeatViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func backBtn(_ sender: UIBarButtonItem){
+        for i in 0..<dayCell.count {
+            print(dayCell[i])
+            Alram?.repeatAlram[i] = weak[Int(dayCell[i])!]
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }
 
@@ -53,10 +60,14 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
         if let cell = repeatTable.cellForRow(at: indexPath){
             if cell.accessoryType == .checkmark{
                 cell.accessoryType = .none
+                dayCell.remove(at: indexPath.row)
             }else{
                 cell.accessoryType = .checkmark
+                dayCell.append("\(indexPath.row)")
             }
         }
+        
+        
     }
     
 }
