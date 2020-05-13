@@ -23,18 +23,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvs-U3-GeW">
-                                            <rect key="frame" x="345" y="35" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvs-U3-GeW">
+                                            <rect key="frame" x="345" y="35" width="51" height="30"/>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQQ-kg-XIg">
-                                            <rect key="frame" x="20" y="23" width="125" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQQ-kg-XIg">
+                                            <rect key="frame" x="20" y="23" width="238" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="238" id="1Hj-gW-kZZ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="centerY" secondItem="gdx-zy-QbS" secondAttribute="centerY" id="36q-b9-bOU"/>
+                                        <constraint firstItem="UQQ-kg-XIg" firstAttribute="leading" secondItem="gdx-zy-QbS" secondAttribute="leadingMargin" id="O2U-PY-Ydx"/>
+                                        <constraint firstItem="UQQ-kg-XIg" firstAttribute="top" secondItem="gdx-zy-QbS" secondAttribute="topMargin" constant="12" id="XBd-9q-HPF"/>
+                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="leading" secondItem="UQQ-kg-XIg" secondAttribute="trailing" constant="87" id="cHL-6f-XoF"/>
+                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="top" secondItem="gdx-zy-QbS" secondAttribute="topMargin" constant="24" id="pg9-9X-xYO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="clockLabel" destination="UQQ-kg-XIg" id="vhC-U7-maF"/>
@@ -62,7 +70,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgN-YR-7BY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2777" y="883"/>
+            <point key="canvasLocation" x="2776.811594202899" y="882.58928571428567"/>
         </scene>
         <!--SecondViewController-->
         <scene sceneID="HGI-E2-ou7">

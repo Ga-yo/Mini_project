@@ -34,10 +34,6 @@ class AlramrepeatViewController: UIViewController {
     }
     */
     @IBAction func backBtn(_ sender: UIBarButtonItem){
-        for i in 0..<dayCell.count {
-            print(dayCell[i])
-            Alram?.repeatAlram[i] = weak[Int(dayCell[i])!]
-        }
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -58,16 +54,15 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = repeatTable.cellForRow(at: indexPath){
-            if cell.accessoryType == .checkmark{
-                cell.accessoryType = .none
-                dayCell.remove(at: indexPath.row)
-            }else{
+            if cell.accessoryType == .none{
                 cell.accessoryType = .checkmark
-                dayCell.append("\(indexPath.row)")
+                
+                //Int(dayCell[i])!
+                for i in 0..<dayCell.count {
+                    Alram[indexPath.row].repeatAlram[i] = weak[indexPath.row]
+                }
+
             }
         }
-        
-        
     }
-    
 }

@@ -9,7 +9,8 @@
 
 import UIKit
 
-var Alram: AlramMD? 
+var Alram = [AlramMD]()
+var clockdata: String?
 var dayCell: [String] = []
 
 class AlramTableViewController: UITableViewController {
@@ -19,25 +20,31 @@ class AlramTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Alram.append(AlramMD(clock: "08:10 AM", repeatAlram: ["매일"], isInsert: true))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Alram.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:AlramTableViewCell = tableView.dequeueReusableCell(withIdentifier: "alramlistCel", for: indexPath) as! AlramTableViewCell
        
-        cell.clockLabel.text = Alram?.clock
+        Alram[indexPath.row].clock = clockdata ?? "뭐야?"
+        cell.clockLabel.text = Alram[indexPath.row].clock
         
         if cell.onoffAlram.isOn {
             print("알람 on")
         }else{
             print("알람r off")
         }
+        
         return cell
     }
     

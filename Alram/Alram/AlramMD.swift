@@ -11,11 +11,12 @@ import Foundation
 struct AlramMD {
     var clock: String
     var repeatAlram: [String]
-    var nameAlram: String
-
-    init(clock: String, repeatAlram: [String], nameAlram: String) {
+    //var nameAlram: String
+    var isInsert: Bool!
+    
+    init(clock: String, repeatAlram: [String], isInsert: Bool) {
         self.clock = clock
         self.repeatAlram = repeatAlram
-        self.nameAlram = nameAlram
+        self.isInsert = false
     }
 }
