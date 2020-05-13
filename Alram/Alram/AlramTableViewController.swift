@@ -22,6 +22,8 @@ class AlramTableViewController: UITableViewController {
         super.viewDidLoad()
         
         Alram.append(AlramMD(clock: "08:10 AM", repeatAlram: ["매일"], isInsert: true))
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +39,7 @@ class AlramTableViewController: UITableViewController {
         let cell:AlramTableViewCell = tableView.dequeueReusableCell(withIdentifier: "alramlistCel", for: indexPath) as! AlramTableViewCell
        
         Alram[indexPath.row].clock = clockdata ?? "뭐야?"
+        
         cell.clockLabel.text = Alram[indexPath.row].clock
         
         if cell.onoffAlram.isOn {

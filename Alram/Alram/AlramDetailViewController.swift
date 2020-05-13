@@ -36,7 +36,9 @@ class AlramDetailViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[0].repeatAlram , isInsert: true)
         
+        Alram.append(item)
         
         self.navigationController?.popViewController(animated: true)
     }

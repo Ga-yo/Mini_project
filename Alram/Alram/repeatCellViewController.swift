@@ -11,6 +11,7 @@ import UIKit
 class AlramrepeatViewController: UIViewController {
 
     var weak: [String] = ["일요일마다", "월요일마다", "화요일마다", "수요일마다", "목요일마다", "금요일마다", "토요일마다"]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
                 for i in 0..<dayCell.count {
                     Alram[indexPath.row].repeatAlram[i] = weak[indexPath.row]
                 }
-
+                
             }
         }
     }
