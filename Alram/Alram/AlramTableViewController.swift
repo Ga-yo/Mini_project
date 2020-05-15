@@ -40,13 +40,19 @@ class AlramTableViewController: UITableViewController {
        
         Alram[indexPath.row].clock = clockdata ?? "뭐야?"
         
+        print("\(indexPath.row)")
+        
+        if indexPath.row > 1 {
+            print(Alram[1].clock)
+        }
+        
         cell.clockLabel.text = Alram[indexPath.row].clock
         
-        if cell.onoffAlram.isOn {
-            print("알람 on")
-        }else{
-            print("알람r off")
-        }
+//        if cell.onoffAlram.isOn {
+//            print("알람 on")
+//        }else{
+//            print("알람r off")
+//        }
         
         return cell
     }

@@ -10,7 +10,7 @@ import UIKit
 
 
 class AlramDetailViewController: UIViewController {
-
+    var count: Int = 0
    
     @IBOutlet weak var clockPicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
@@ -27,18 +27,20 @@ class AlramDetailViewController: UIViewController {
     
 
     @IBAction func SaveData(_ sender: UIBarButtonItem) {
-        if Alram.isEmpty {
+        if clockdata == nil ||  Alram[0].repeatAlram.isEmpty{
             let alert = UIAlertController(title: "잠깐!", message: "시간이 지정되지 않았거나 반복회수를 지정하지 않았습니다.", preferredStyle: .alert)
             let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
             alert.addAction(alertaction)
 
             present(alert, animated: true, completion: nil)
+        }else{
+            
+            let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[count].repeatAlram , isInsert: true)
+            Alram.append(item)
+            count+=1
         }
         
-        let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[0].repeatAlram , isInsert: true)
-        
-        Alram.append(item)
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -49,7 +51,6 @@ class AlramDetailViewController: UIViewController {
     
     @IBAction func ChooseDate(_ sender: UIDatePicker) {
         clockPicker.addTarget(nil, action: #selector(change), for: .valueChanged)
-        
     }
     
     /*
@@ -70,6 +71,7 @@ class AlramDetailViewController: UIViewController {
         clockdata = date
         print(date)
     }
+    
 
 }
 

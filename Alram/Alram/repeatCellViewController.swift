@@ -54,6 +54,7 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let cell = repeatTable.cellForRow(at: indexPath){
             if cell.accessoryType == .none{
                 cell.accessoryType = .checkmark
