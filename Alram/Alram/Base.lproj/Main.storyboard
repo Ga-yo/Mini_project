@@ -56,7 +56,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="STc-jI-OxZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TMZ-rS-72O"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TMZ-rS-72O">
+                            <connections>
+                                <action selector="EditBtn:" destination="W1i-NR-6xY" id="yY6-pc-eg6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
                             <connections>
                                 <segue destination="lhq-mY-Qdi" kind="show" id="E8A-cF-DxO"/>

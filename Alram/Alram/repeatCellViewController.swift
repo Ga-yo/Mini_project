@@ -11,8 +11,10 @@ import UIKit
 class AlramrepeatViewController: UIViewController {
 
     var weak: [String] = ["일요일마다", "월요일마다", "화요일마다", "수요일마다", "목요일마다", "금요일마다", "토요일마다"]
-   
-    
+    var count: Int = 0
+
+    @IBOutlet weak var repeatTable: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,19 +24,10 @@ class AlramrepeatViewController: UIViewController {
         self.repeatTable.dataSource = self
     }
     
-    @IBOutlet weak var repeatTable: UITableView!
 
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func backBtn(_ sender: UIBarButtonItem){
+        repeatTable.reloadData()
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -49,22 +42,24 @@ extension AlramrepeatViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = repeatTable.dequeueReusableCell(withIdentifier: "repeat", for: indexPath)
         
         cell.textLabel?.text = weak[indexPath.row]
-        
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let cell = repeatTable.cellForRow(at: indexPath){
             if cell.accessoryType == .none{
                 cell.accessoryType = .checkmark
+                cell.isSelected = true
+//                print(Alram[0].repeatAlram[0]) //매일
+//                print(Alram[1].repeatAlram[0]) //X
                 
-                //Int(dayCell[i])!
-                for i in 0..<dayCell.count {
-                    Alram[indexPath.row].repeatAlram[i] = weak[indexPath.row]
-                }
-                
+//                Alram[1].repeatAlram[count] = weak[indexPath.row]
+//                count+=1
             }
         }
+        
+        
     }
 }
+

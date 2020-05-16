@@ -10,7 +10,7 @@ import UIKit
 
 
 class AlramDetailViewController: UIViewController {
-    var count: Int = 0
+    var countAlram: Int = 0
    
     @IBOutlet weak var clockPicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
@@ -27,7 +27,7 @@ class AlramDetailViewController: UIViewController {
     
 
     @IBAction func SaveData(_ sender: UIBarButtonItem) {
-        if clockdata == nil ||  Alram[0].repeatAlram.isEmpty{
+        if clockdata == nil ||  Alram.isEmpty {
             let alert = UIAlertController(title: "잠깐!", message: "시간이 지정되지 않았거나 반복회수를 지정하지 않았습니다.", preferredStyle: .alert)
             let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -35,13 +35,24 @@ class AlramDetailViewController: UIViewController {
 
             present(alert, animated: true, completion: nil)
         }else{
-            let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[count].repeatAlram , isInsert: true)
+            let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[countAlram].repeatAlram , isInsert: true)
             Alram.append(item)
-            count+=1
+            countAlram+=1
+            print(item.repeatAlram)
+            let alert = UIAlertController(title: "확인", message: "시간이 \(item.clock)이 맞습니까?", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            
+            alert.addAction(alertAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true, completion: nil)
+            
         }
         
         
-        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelData(_ sender: UIBarButtonItem) {
