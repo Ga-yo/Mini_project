@@ -15,15 +15,16 @@ var dayCell: [String] = []
 
 class AlramTableViewController: UITableViewController {
 
+    //var abc: [String] = ["A", "B", "C", "D", "E"]
+    
     @IBOutlet weak var plusBtn: UIBarButtonItem!
     @IBOutlet weak var editBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         Alram.append(AlramMD(clock: "08:10 AM", repeatAlram: ["매일"], isInsert: true))
-        
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,14 +37,17 @@ class AlramTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell:AlramTableViewCell = tableView.dequeueReusableCell(withIdentifier: "alramlistCel", for: indexPath) as! AlramTableViewCell
        
-        Alram[indexPath.row].clock = clockdata ?? "뭐야?"
+        //Alram[indexPath.row].clock = clockdata ?? "08:15"
+        //이거 떄문에 리스트 안뜸
         
         print("\(indexPath.row)")
         
         if indexPath.row > 1 {
             print(Alram[1].clock)
+            print(Alram[0].clock)
         }
         
         cell.clockLabel.text = Alram[indexPath.row].clock
@@ -53,7 +57,6 @@ class AlramTableViewController: UITableViewController {
 //        }else{
 //            print("알람r off")
 //        }
-        
         return cell
     }
     

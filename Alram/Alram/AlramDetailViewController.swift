@@ -35,7 +35,6 @@ class AlramDetailViewController: UIViewController {
 
             present(alert, animated: true, completion: nil)
         }else{
-            
             let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[count].repeatAlram , isInsert: true)
             Alram.append(item)
             count+=1
