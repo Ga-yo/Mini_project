@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" id="STc-jI-OxZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TMZ-rS-72O">
                             <connections>
-                                <action selector="EditBtn:" destination="W1i-NR-6xY" id="yY6-pc-eg6"/>
+                                <action selector="EditBtn" destination="W1i-NR-6xY" id="aTh-fM-Cfg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
@@ -122,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fSp-Rm-Zev" kind="show" id="Lw8-7h-sKI"/>
+                                            <segue destination="fSp-Rm-Zev" kind="show" id="msP-vj-NuC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="3557.971014492754" y="882.58928571428567"/>
         </scene>
-        <!--Alramrepeat View Controller-->
+        <!--Alramtext Table View Controller-->
         <scene sceneID="q6g-yK-VJQ">
             <objects>
-                <viewController id="fSp-Rm-Zev" customClass="AlramrepeatViewController" customModule="Alram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fSp-Rm-Zev" customClass="AlramtextTableViewController" customModule="Alram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUX-oZ-kym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,14 +167,35 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-1o-2q5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ucV-h5-UAE">
+                                    <rect key="frame" x="0.0" y="90.5" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repeat" id="cWV-OZ-LgG">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alramName" id="Kr8-eZ-h6w" customClass="NameTableViewCell" customModule="Alram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="34.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWV-OZ-LgG" id="lq0-8j-aYu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kr8-eZ-h6w" id="bpw-zC-PA7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="알람 제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9DZ-Te-w1e">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9DZ-Te-w1e" firstAttribute="leading" secondItem="bpw-zC-PA7" secondAttribute="leading" id="4Ju-1h-gL6"/>
+                                                <constraint firstItem="9DZ-Te-w1e" firstAttribute="top" secondItem="bpw-zC-PA7" secondAttribute="top" id="IoZ-kc-QWl"/>
+                                                <constraint firstAttribute="bottom" secondItem="9DZ-Te-w1e" secondAttribute="bottom" id="aKN-2D-T5x"/>
+                                                <constraint firstAttribute="trailing" secondItem="9DZ-Te-w1e" secondAttribute="trailing" id="x1a-zG-6HU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textfield" destination="9DZ-Te-w1e" id="uQq-Ma-4I3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -191,17 +212,17 @@
                     <navigationItem key="navigationItem" id="PP2-Iy-k2s">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Oxu-Eq-NwF">
                             <connections>
-                                <action selector="backBtn:" destination="fSp-Rm-Zev" id="UuA-FV-Bbb"/>
+                                <action selector="cancelBtn:" destination="fSp-Rm-Zev" id="oD9-oh-Cru"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="repeatTable" destination="BNS-1o-2q5" id="J1p-E3-2gx"/>
+                        <outlet property="tableview" destination="BNS-1o-2q5" id="95s-p3-Gse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSK-dq-0wE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4330" y="883"/>
+            <point key="canvasLocation" x="4328.985507246377" y="882.58928571428567"/>
         </scene>
         <!--Alram-->
         <scene sceneID="vyo-h8-Zia">

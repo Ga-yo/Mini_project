@@ -10,8 +10,6 @@ import UIKit
 
 
 class AlramDetailViewController: UIViewController {
-    var countAlram: Int = 0
-   
     @IBOutlet weak var clockPicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
@@ -27,19 +25,17 @@ class AlramDetailViewController: UIViewController {
     
 
     @IBAction func SaveData(_ sender: UIBarButtonItem) {
-        if clockdata == nil ||  Alram.isEmpty {
-            let alert = UIAlertController(title: "잠깐!", message: "시간이 지정되지 않았거나 반복회수를 지정하지 않았습니다.", preferredStyle: .alert)
+        if clockdata == nil {
+            let alert = UIAlertController(title: "잠깐!", message: "시간이 지정되지 않았거나 레이블을 지정하지 않았습니다.", preferredStyle: .alert)
             let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
             alert.addAction(alertaction)
 
             present(alert, animated: true, completion: nil)
         }else{
-            let item: AlramMD = AlramMD(clock: clockdata!, repeatAlram: Alram[countAlram].repeatAlram , isInsert: true)
+            let item: AlramMD = AlramMD(clock: clockdata!, name: alramName! , isInsert: true)
             Alram.append(item)
-            countAlram+=1
-            print(item.repeatAlram)
-            let alert = UIAlertController(title: "확인", message: "시간이 \(item.clock)이 맞습니까?", preferredStyle: .alert)
+            let alert = UIAlertController(title: alramName, message: "시간이 \(item.clock)이 맞습니까?", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 self.navigationController?.popViewController(animated: true)
             })
@@ -93,7 +89,7 @@ extension AlramDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reapetcell", for: indexPath)
         
-        cell.textLabel?.text = "반복"
+        cell.textLabel?.text = "레이블"
         
         return cell
     }

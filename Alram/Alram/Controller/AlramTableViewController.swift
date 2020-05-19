@@ -11,20 +11,19 @@ import UIKit
 
 var Alram = [AlramMD]()
 var clockdata: String?
-var dayCell: [String] = []
-var indexpathRow: Int = 0 //repeatCell에서 필요한 변수
+var alramName: String?
 
 class AlramTableViewController: UITableViewController {
 
     //var abc: [String] = ["A", "B", "C", "D", "E"]
-    let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneBtnTap))
+    lazy var doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnTap(_:)))
     
     @IBOutlet weak var plusBtn: UIBarButtonItem!
     @IBOutlet weak var editBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alram.append(AlramMD(clock: "08:10 AM", repeatAlram: ["매일"], isInsert: true))
+        Alram.append(AlramMD(clock: "08:10 AM", name: "학교가야지", isInsert: true))
         
         doneBtn.style = .plain
     }
@@ -34,15 +33,21 @@ class AlramTableViewController: UITableViewController {
     }
     
     @IBAction func EditBtn(){
+        self.navigationItem.leftBarButtonItem = editBtn
+
         guard !Alram.isEmpty else {
             return
         }
+        
+        plusBtn.isEnabled = false
         tableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = doneBtn
     }
     
-    @objc func doneBtnTap(){
+    @objc private func doneBtnTap(_ sender: Any){
+        print("수정모드 끝")
         self.navigationItem.leftBarButtonItem = editBtn
+        plusBtn.isEnabled = true
         tableView.setEditing(false, animated: true)
     }
     
@@ -59,18 +64,14 @@ class AlramTableViewController: UITableViewController {
         
         //Alram[indexPath.row].clock = clockdata ?? "08:15"
         //이거 때문에 삽질함.. 박제 ㅜ
-        
-        indexpathRow = indexPath.row
-        
-        print(indexPath.row)
-        
+
         cell.clockLabel.text = Alram[indexPath.row].clock
         
-//        if cell.onoffAlram.isOn {
-//            print("알람 on")
-//        }else{
-//            print("알람r off")
-//        }
+        if cell.onoffAlram.isOn {
+            Alram[indexPath.row].isInsert = true
+        }else{
+            Alram[indexPath.row].isInsert = false
+        }
         
         return cell
     }
