@@ -14,24 +14,29 @@ var clockdata: String?
 var alramName: String?
 
 class AlramTableViewController: UITableViewController {
-
-    //var abc: [String] = ["A", "B", "C", "D", "E"]
     lazy var doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnTap(_:)))
     
     @IBOutlet weak var plusBtn: UIBarButtonItem!
     @IBOutlet weak var editBtn: UIBarButtonItem!
     
+    // MARK: - viewLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         Alram.append(AlramMD(clock: "08:10 AM", name: "학교가야지", isInsert: true))
         
         doneBtn.style = .plain
+        loadAllData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        saveUserdefault()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
+    // MARK: - IBAction
     @IBAction func EditBtn(){
         self.navigationItem.leftBarButtonItem = editBtn
 
@@ -51,9 +56,40 @@ class AlramTableViewController: UITableViewController {
         tableView.setEditing(false, animated: true)
     }
     
+    func saveUserdefault(){
+         let data = Alram.map{
+             [
+                 "clock": $0.clock,
+                 "name": $0.nameAlram,
+                 "isInsert": $0.isInsert ?? false
+             ]
+         }
+         
+         let userDefaults = UserDefaults.standard
+         userDefaults.set(data, forKey: "items")
+         userDefaults.synchronize() //동기화
+     }
     
-    // MARK: - Table view data source
-
+        func loadAllData() {
+            let userDefaults = UserDefaults.standard
+            guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
+                return
+            }
+     
+            print(data.description)
+     
+            // list 배열에 저장하기
+            print(type(of: data))
+            Alram = data.map {
+                let clock = $0["clock"] as? String
+                let name = $0["name"] as? String
+                let isInsert = $0["isInsert"] as? Bool
+     
+                return AlramMD(clock: clock!, name: name!, isInsert: isInsert!)
+            }
+        }
+    
+    // MARK: - Table view data source, Table vuew delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Alram.count
     }
@@ -73,6 +109,7 @@ class AlramTableViewController: UITableViewController {
             Alram[indexPath.row].isInsert = false
         }
         
+        
         return cell
     }
     
@@ -84,4 +121,5 @@ class AlramTableViewController: UITableViewController {
         Alram.remove(at: indexPath.row)
         tableView.reloadData()
     }
+    
 }

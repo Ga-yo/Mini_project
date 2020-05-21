@@ -63,7 +63,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
                             <connections>
-                                <segue destination="lhq-mY-Qdi" kind="show" id="E8A-cF-DxO"/>
+                                <segue destination="lhq-mY-Qdi" kind="show" identifier="" id="E8A-cF-DxO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

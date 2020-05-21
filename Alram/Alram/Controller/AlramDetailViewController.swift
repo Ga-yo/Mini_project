@@ -10,6 +10,7 @@ import UIKit
 
 
 class AlramDetailViewController: UIViewController {
+    
     @IBOutlet weak var clockPicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
@@ -41,14 +42,17 @@ class AlramDetailViewController: UIViewController {
             })
             let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
             
+            
+            UserDefaults.standard.set(clockdata!, forKey: "시간")
+            UserDefaults.standard.set(alramName!, forKey: "알람제목")
+            UserDefaults.standard.set(true, forKey: "스위치")
+            
             alert.addAction(alertAction)
             alert.addAction(cancelAction)
             
             present(alert, animated: true, completion: nil)
             
         }
-        
-        
     }
     
     @IBAction func cancelData(_ sender: UIBarButtonItem) {
@@ -58,16 +62,6 @@ class AlramDetailViewController: UIViewController {
     @IBAction func ChooseDate(_ sender: UIDatePicker) {
         clockPicker.addTarget(nil, action: #selector(change), for: .valueChanged)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @objc func change(){
         let dateformatter = DateFormatter()
@@ -80,6 +74,7 @@ class AlramDetailViewController: UIViewController {
     
 
 }
+
 
 extension AlramDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
