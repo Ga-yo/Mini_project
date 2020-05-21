@@ -25,6 +25,9 @@
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvs-U3-GeW">
                                             <rect key="frame" x="345" y="35" width="51" height="30"/>
+                                            <connections>
+                                                <action selector="selectSwitch:" destination="pzC-tA-v68" eventType="touchUpInside" id="Jhl-8D-lXQ"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQQ-kg-XIg">
                                             <rect key="frame" x="20" y="23" width="238" height="60"/>
@@ -63,7 +66,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dao-PS-NXv">
                             <connections>
-                                <segue destination="lhq-mY-Qdi" kind="show" identifier="" id="E8A-cF-DxO"/>
+                                <segue destination="lhq-mY-Qdi" kind="show" identifier="Onesegue" id="E8A-cF-DxO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

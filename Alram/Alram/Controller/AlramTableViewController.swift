@@ -25,6 +25,7 @@ class AlramTableViewController: UITableViewController {
         Alram.append(AlramMD(clock: "08:10 AM", name: "학교가야지", isInsert: true))
         
         doneBtn.style = .plain
+        tableView.allowsSelection = false
         loadAllData()
     }
 
@@ -70,24 +71,24 @@ class AlramTableViewController: UITableViewController {
          userDefaults.synchronize() //동기화
      }
     
-        func loadAllData() {
-            let userDefaults = UserDefaults.standard
-            guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
-                return
-            }
-     
-            print(data.description)
-     
-            // list 배열에 저장하기
-            print(type(of: data))
-            Alram = data.map {
-                let clock = $0["clock"] as? String
-                let name = $0["name"] as? String
-                let isInsert = $0["isInsert"] as? Bool
-     
-                return AlramMD(clock: clock!, name: name!, isInsert: isInsert!)
-            }
+    func loadAllData() {
+        let userDefaults = UserDefaults.standard
+        guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
+            return
         }
+     
+        print(data.description)
+     
+        // list 배열에 저장하기
+        print(type(of: data))
+        Alram = data.map {
+            let clock = $0["clock"] as? String
+            let name = $0["name"] as? String
+            let isInsert = $0["isInsert"] as? Bool
+    
+            return AlramMD(clock: clock!, name: name!, isInsert: isInsert!)
+        }
+    }
     
     // MARK: - Table view data source, Table vuew delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,9 +105,15 @@ class AlramTableViewController: UITableViewController {
         cell.clockLabel.text = Alram[indexPath.row].clock
         
         if cell.onoffAlram.isOn {
+            cell.clockLabel.textColor = .black
+            cell.backgroundColor = .white
+            
             Alram[indexPath.row].isInsert = true
         }else{
             Alram[indexPath.row].isInsert = false
+            
+            cell.clockLabel.textColor = .white
+            cell.backgroundColor = .gray
         }
         
         

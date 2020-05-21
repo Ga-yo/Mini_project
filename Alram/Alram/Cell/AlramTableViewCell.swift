@@ -13,6 +13,16 @@ class AlramTableViewCell: UITableViewCell {
     @IBOutlet weak var clockLabel: UILabel!
     @IBOutlet weak var onoffAlram: UISwitch!
     
+    
+    @IBAction func selectSwitch(_ sender: UISwitch){
+        if onoffAlram.isOn{
+            clockLabel.textColor = .black
+            backgroundColor = .white
+        }else{
+            clockLabel.textColor = .white
+            backgroundColor = .gray
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
