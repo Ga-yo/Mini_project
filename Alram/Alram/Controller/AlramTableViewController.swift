@@ -26,11 +26,13 @@ class AlramTableViewController: UITableViewController {
         
         doneBtn.style = .plain
         tableView.allowsSelection = false
+        
         loadAllData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         saveUserdefault()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,18 +41,18 @@ class AlramTableViewController: UITableViewController {
     
     // MARK: - IBAction
     @IBAction func EditBtn(){
-        self.navigationItem.leftBarButtonItem = editBtn
-
+        
         guard !Alram.isEmpty else {
             return
         }
         
         plusBtn.isEnabled = false
-        tableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = doneBtn
+
+        tableView.setEditing(true, animated: true)
     }
     
-    @objc private func doneBtnTap(_ sender: Any){
+    @objc func doneBtnTap(_ sender: Any){
         print("수정모드 끝")
         self.navigationItem.leftBarButtonItem = editBtn
         plusBtn.isEnabled = true

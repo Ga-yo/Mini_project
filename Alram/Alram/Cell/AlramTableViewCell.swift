@@ -22,7 +22,10 @@ class AlramTableViewCell: UITableViewCell {
             clockLabel.textColor = .white
             backgroundColor = .gray
         }
+        
+        
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

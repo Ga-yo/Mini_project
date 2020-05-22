@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DIJ-Y0-6fV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DIJ-Y0-6fV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvs-U3-GeW">
-                                            <rect key="frame" x="345" y="35" width="51" height="30"/>
+                                            <rect key="frame" x="345" y="35" width="51" height="31"/>
                                             <connections>
                                                 <action selector="selectSwitch:" destination="pzC-tA-v68" eventType="touchUpInside" id="Jhl-8D-lXQ"/>
                                             </connections>
@@ -40,10 +40,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="centerY" secondItem="gdx-zy-QbS" secondAttribute="centerY" id="36q-b9-bOU"/>
+                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UQQ-kg-XIg" secondAttribute="trailing" constant="8" symbolic="YES" id="2Po-12-t3e"/>
                                         <constraint firstItem="UQQ-kg-XIg" firstAttribute="leading" secondItem="gdx-zy-QbS" secondAttribute="leadingMargin" id="O2U-PY-Ydx"/>
                                         <constraint firstItem="UQQ-kg-XIg" firstAttribute="top" secondItem="gdx-zy-QbS" secondAttribute="topMargin" constant="12" id="XBd-9q-HPF"/>
-                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="leading" secondItem="UQQ-kg-XIg" secondAttribute="trailing" constant="87" id="cHL-6f-XoF"/>
+                                        <constraint firstItem="Rvs-U3-GeW" firstAttribute="trailing" secondItem="gdx-zy-QbS" secondAttribute="trailingMargin" id="nOt-hF-8zZ"/>
                                         <constraint firstItem="Rvs-U3-GeW" firstAttribute="top" secondItem="gdx-zy-QbS" secondAttribute="topMargin" constant="24" id="pg9-9X-xYO"/>
                                     </constraints>
                                 </tableViewCellContentView>
