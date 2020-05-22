@@ -25,8 +25,6 @@ class stopWatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -89,12 +87,28 @@ class stopWatchViewController: UIViewController {
     @objc func repeatTime(){
         StopWatch.count = StopWatch.count + 0.035
         //String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
-
-        timeLabel.text = String(format: "%.2f", StopWatch.count)
+        
+        let timerSave = stringFromTimeInterval(interval: StopWatch.count)
+        
+        timeLabel.text = timerSave as String
     }
     
     @objc func whenStopTime(){
+        
+
         timeLabel.text = String(StopWatch.count)
+    }
+    
+    func stringFromTimeInterval(interval: TimeInterval) -> NSString {
+
+      let ti = NSInteger(interval)
+
+        let ms = Int((interval.truncatingRemainder(dividingBy: 1) * 100))
+
+      let seconds = ti % 60
+      let minutes = (ti / 60) % 60
+
+      return NSString(format: "%0.2d:%0.2d.%0.2d",minutes,seconds,ms)
     }
     /*
     // MARK: - Navigation
@@ -114,6 +128,7 @@ extension stopWatchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "stopwatchCell", for: indexPath)
 //
 //        if indexPath.row == 0 {
@@ -130,3 +145,4 @@ extension stopWatchViewController: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+
