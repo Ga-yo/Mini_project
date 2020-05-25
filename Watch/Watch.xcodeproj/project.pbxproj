@@ -17,8 +17,8 @@
 		EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */; };
 		EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B3246138C10025F9DC /* TimerViewController.swift */; };
 		EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64158824613FF700AA3F14 /* MainDetailViewController.swift */; };
+		EB80B4EA2477D29A0054D7B7 /* TimerMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B4E92477D29A0054D7B7 /* TimerMD.swift */; };
 		EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */; };
-		EBA7CF8B24640567008CEED7 /* AlramMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF8A24640567008CEED7 /* AlramMD.swift */; };
 		EBCC38352462CB7000F30360 /* stopWatchMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC38342462CB7000F30360 /* stopWatchMD.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +35,8 @@
 		EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchViewController.swift; sourceTree = "<group>"; };
 		EB1D38B3246138C10025F9DC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		EB64158824613FF700AA3F14 /* MainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
+		EB80B4E92477D29A0054D7B7 /* TimerMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMD.swift; sourceTree = "<group>"; };
 		EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewCell.swift; sourceTree = "<group>"; };
-		EBA7CF8A24640567008CEED7 /* AlramMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramMD.swift; sourceTree = "<group>"; };
 		EBCC38342462CB7000F30360 /* stopWatchMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchMD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +106,8 @@
 		EBCC38332462CB4D00F30360 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB80B4E92477D29A0054D7B7 /* TimerMD.swift */,
 				EBCC38342462CB7000F30360 /* stopWatchMD.swift */,
-				EBA7CF8A24640567008CEED7 /* AlramMD.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB80B4EA2477D29A0054D7B7 /* TimerMD.swift in Sources */,
 				EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */,
 				EB12C9CB2461274D00D1D6C7 /* AppDelegate.swift in Sources */,
-				EBA7CF8B24640567008CEED7 /* AlramMD.swift in Sources */,
 				EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */,
 				EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */,
 				EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */,

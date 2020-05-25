@@ -182,13 +182,16 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-Fo-vle">
                                 <rect key="frame" x="0.0" y="84" width="414" height="216"/>
                                 <connections>
-                                    <action selector="chooseTime:" destination="RYe-dN-gbh" eventType="touchUpInside" id="s87-NQ-v1A"/>
+                                    <action selector="chooseTime:" destination="RYe-dN-gbh" eventType="valueChanged" id="dAV-c7-C2u"/>
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-xf-qM0">
-                                <rect key="frame" x="335" y="350" width="30" height="30"/>
+                                <rect key="frame" x="301" y="350" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="시작"/>
+                                <connections>
+                                    <action selector="startTime:" destination="RYe-dN-gbh" eventType="touchUpInside" id="4mu-he-oPs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-UI-44U">
                                 <rect key="frame" x="50" y="350" width="30" height="30"/>
@@ -221,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ef-Ai-Viy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="1448"/>
+            <point key="canvasLocation" x="924.63768115942037" y="1447.7678571428571"/>
         </scene>
         <!--StopWatch-->
         <scene sceneID="Dft-P5-gFJ">

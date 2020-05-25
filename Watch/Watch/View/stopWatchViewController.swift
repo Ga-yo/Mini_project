@@ -50,7 +50,6 @@ class stopWatchViewController: UIViewController {
             
             changeButton(startButton, "Start")
             changeButton(lapButton, "Reset")
-
         }
     }
     
