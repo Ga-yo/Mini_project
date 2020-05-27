@@ -24,13 +24,15 @@ class TimerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
     @IBAction func chooseTime(_ sender: UIDatePicker) {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.dateFormat = "HH:mm:ss"
         self.showTime.text = dateFormatter.string(from: sender.date)
-        structTime.counter = Double(dateFormatter.string(from: sender.date)) ?? 0.0
+        structTime.counter = dateFormatter.date(from: self.showTime.text!)!
+        print(dateFormatter.date(from: dateFormatter.string(from: sender.date))!)
+        //structTime.counter = dateFormatter.date(from: sender.date)!)
+        print(dateFormatter.string(from: sender.date))
     }
     
     @IBAction func startTime(_ sender: UIButton){
@@ -46,10 +48,18 @@ class TimerViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelTime(_ sender: UIButton){
+        structTime.counter = Date()
+        structTime.timerTime = Timer()
+        self.showTime.text = "00.00"
+        self.isTimer = true
+        timeCheck.isEnabled = true
+    }
+    
     @objc func repeatTime(){
         //제대로 카운트하게해야함
         structTime.counter -= 0.035
-        showTime.text = String(structTime.counter)
+        showTime.text = "\(structTime.counter)"
     }
     
     func changeButton(_ button: UIButton, _ title: String){
