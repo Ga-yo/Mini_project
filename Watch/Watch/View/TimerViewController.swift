@@ -28,18 +28,15 @@ class TimerViewController: UIViewController {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.dateFormat = "HH:mm:ss"
+        structTime.counter = Int(sender.countDownDuration)
         self.showTime.text = dateFormatter.string(from: sender.date)
-        structTime.counter = dateFormatter.date(from: self.showTime.text!)!
-        print(dateFormatter.date(from: dateFormatter.string(from: sender.date))!)
-        //structTime.counter = dateFormatter.date(from: sender.date)!)
-        print(dateFormatter.string(from: sender.date))
     }
     
     @IBAction func startTime(_ sender: UIButton){
         if isTimer{
             timeCheck.isEnabled = false
             changeButton(startBtn, "재개")
-            structTime.timerTime = Timer.scheduledTimer(timeInterval: 0.035, target: self, selector: #selector(repeatTime), userInfo: nil, repeats: true)
+            structTime.timerTime = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(repeatTime), userInfo: nil, repeats: true)
             isTimer = false
         }else{
             changeButton(startBtn, "일시정지")
@@ -49,7 +46,7 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func cancelTime(_ sender: UIButton){
-        structTime.counter = Date()
+        structTime.counter = 00
         structTime.timerTime = Timer()
         self.showTime.text = "00.00"
         self.isTimer = true
@@ -58,22 +55,17 @@ class TimerViewController: UIViewController {
     
     @objc func repeatTime(){
         //제대로 카운트하게해야함
-        structTime.counter -= 0.035
-        showTime.text = "\(structTime.counter)"
+       if structTime.counter > 0 {
+            structTime.counter -= 1
+            self.showTime.text = "\(structTime.counter/60):"
+        }else{
+            self.showTime.text = "카운드다운 완료!"
+        }
     }
     
     func changeButton(_ button: UIButton, _ title: String){
            print("왕")
            button.setTitle(title, for: .normal)
        }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -201,8 +201,8 @@
                                     <action selector="cancelTime:" destination="RYe-dN-gbh" eventType="touchUpInside" id="t4N-U6-cUY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swk-Jg-UuR">
-                                <rect key="frame" x="70" y="543" width="283" height="160"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swk-Jg-UuR">
+                                <rect key="frame" x="45" y="540" width="324" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Xl2-Jc-bVh"/>
                                 </constraints>

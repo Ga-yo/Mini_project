@@ -10,10 +10,10 @@ import Foundation
 
 struct TimerMD {
     var timerTime: Timer
-    var counter: Date
+    var counter: Int
     
     init() {
         self.timerTime = Timer()
-        self.counter = Date()
+        self.counter = 00
     }
 }
