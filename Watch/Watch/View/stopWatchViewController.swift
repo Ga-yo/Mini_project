@@ -68,7 +68,6 @@ class stopWatchViewController: UIViewController {
     }
     
     func changeButton(_ button: UIButton, _ title: String){
-        print("왕")
         button.setTitle(title, for: .normal)
     }
     

@@ -23,49 +23,29 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorldCell" rowHeight="100" id="1yB-uC-iro" customClass="MainTableViewCell" customModule="Watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorldCell" textLabel="Jwl-bW-ksg" detailTextLabel="0Ar-4L-YtP" rowHeight="63" style="IBUITableViewCellStyleValue1" id="1yB-uC-iro" customClass="MainTableViewCell" customModule="Watch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1yB-uC-iro" id="qML-eI-6it">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsm-K8-4kQ">
-                                            <rect key="frame" x="20" y="55" width="49" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jwl-bW-ksg">
+                                            <rect key="frame" x="20" y="22" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efh-pL-KfL">
-                                            <rect key="frame" x="257" y="10" width="147" height="80"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘, +0시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-GR-Wsk">
-                                            <rect key="frame" x="20" y="11" width="89" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ar-4L-YtP">
+                                            <rect key="frame" x="350" y="22" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="0YB-GR-Wsk" firstAttribute="top" secondItem="qML-eI-6it" secondAttribute="topMargin" id="9c7-db-ald"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Rsm-K8-4kQ" secondAttribute="bottom" id="IEs-sy-1AR"/>
-                                        <constraint firstItem="efh-pL-KfL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0YB-GR-Wsk" secondAttribute="trailing" constant="8" symbolic="YES" id="KIj-nW-dsl"/>
-                                        <constraint firstItem="Rsm-K8-4kQ" firstAttribute="leading" secondItem="qML-eI-6it" secondAttribute="leadingMargin" id="OqC-22-J3N"/>
-                                        <constraint firstItem="0YB-GR-Wsk" firstAttribute="leading" secondItem="qML-eI-6it" secondAttribute="leadingMargin" id="Z5f-Z6-Y6f"/>
-                                        <constraint firstItem="efh-pL-KfL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rsm-K8-4kQ" secondAttribute="trailing" constant="8" symbolic="YES" id="bUl-Ze-zuW"/>
-                                        <constraint firstAttribute="bottom" secondItem="efh-pL-KfL" secondAttribute="bottom" constant="10" id="drf-jd-tQi"/>
-                                        <constraint firstItem="efh-pL-KfL" firstAttribute="top" secondItem="qML-eI-6it" secondAttribute="top" constant="10" id="dtG-pZ-5Pl"/>
-                                        <constraint firstAttribute="trailing" secondItem="efh-pL-KfL" secondAttribute="trailing" constant="10" id="in7-No-1Qz"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="currentClock" destination="efh-pL-KfL" id="Ge5-WI-oy6"/>
-                                    <outlet property="currentCountry" destination="Rsm-K8-4kQ" id="FAZ-I2-qza"/>
-                                    <outlet property="dayAndclock" destination="0YB-GR-Wsk" id="J1P-h7-QAo"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -77,8 +57,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BDQ-GK-tAh"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="X4v-cn-oY1">
                             <connections>
-                                <action selector="addbutton:" destination="8wZ-Fe-QFl" id="fkA-uK-geY"/>
-                                <segue destination="04t-i9-Pgp" kind="presentation" identifier="worldView" id="MB3-bH-upH"/>
+                                <segue destination="04t-i9-Pgp" kind="show" id="cgf-7g-gew"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,14 +75,14 @@
             <objects>
                 <viewController id="04t-i9-Pgp" customClass="MainDetailViewController" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6c-WT-3fP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-m2-bZe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" id="ULX-8W-i9l">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="worldArray" id="ULX-8W-i9l">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULX-8W-i9l" id="B9V-kS-RWG">
@@ -123,6 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fvh-K4-cLY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3k1-4O-FVF"/>
                     <connections>
                         <outlet property="tableView" destination="S3R-m2-bZe" id="97h-Bl-aAx"/>
                     </connections>

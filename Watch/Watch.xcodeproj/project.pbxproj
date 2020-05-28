@@ -16,6 +16,7 @@
 		EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */; };
 		EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */; };
 		EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B3246138C10025F9DC /* TimerViewController.swift */; };
+		EB3784E6247FA72D0002DF9B /* WorldMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3784E5247FA72D0002DF9B /* WorldMD.swift */; };
 		EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64158824613FF700AA3F14 /* MainDetailViewController.swift */; };
 		EB80B4EA2477D29A0054D7B7 /* TimerMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B4E92477D29A0054D7B7 /* TimerMD.swift */; };
 		EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 		EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchViewController.swift; sourceTree = "<group>"; };
 		EB1D38B3246138C10025F9DC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		EB3784E5247FA72D0002DF9B /* WorldMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMD.swift; sourceTree = "<group>"; };
 		EB64158824613FF700AA3F14 /* MainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
 		EB80B4E92477D29A0054D7B7 /* TimerMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMD.swift; sourceTree = "<group>"; };
 		EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				EB80B4E92477D29A0054D7B7 /* TimerMD.swift */,
+				EB3784E5247FA72D0002DF9B /* WorldMD.swift */,
 				EBCC38342462CB7000F30360 /* stopWatchMD.swift */,
 			);
 			path = Model;
@@ -189,6 +192,7 @@
 				EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */,
 				EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */,
 				EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */,
+				EB3784E6247FA72D0002DF9B /* WorldMD.swift in Sources */,
 				EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */,
 				EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */,
 				EB12C9CD2461274D00D1D6C7 /* SceneDelegate.swift in Sources */,
