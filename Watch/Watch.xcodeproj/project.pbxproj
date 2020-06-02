@@ -12,15 +12,15 @@
 		EB12C9D22461274D00D1D6C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB12C9D02461274D00D1D6C7 /* Main.storyboard */; };
 		EB12C9D42461275000D1D6C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB12C9D32461275000D1D6C7 /* Assets.xcassets */; };
 		EB12C9D72461275000D1D6C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB12C9D52461275000D1D6C7 /* LaunchScreen.storyboard */; };
-		EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */; };
 		EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */; };
 		EB1D38B2246138B00025F9DC /* stopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */; };
 		EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D38B3246138C10025F9DC /* TimerViewController.swift */; };
 		EB3784E6247FA72D0002DF9B /* WorldMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3784E5247FA72D0002DF9B /* WorldMD.swift */; };
 		EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64158824613FF700AA3F14 /* MainDetailViewController.swift */; };
 		EB80B4EA2477D29A0054D7B7 /* TimerMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B4E92477D29A0054D7B7 /* TimerMD.swift */; };
-		EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */; };
 		EBCC38352462CB7000F30360 /* stopWatchMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC38342462CB7000F30360 /* stopWatchMD.swift */; };
+		EBD6D24B2480E9A000380EF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD6D24A2480E9A000380EF4 /* MainViewController.swift */; };
+		EBD6D2552480FCE600380EF4 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD6D2532480FCE600380EF4 /* NameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,15 +31,15 @@
 		EB12C9D32461275000D1D6C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB12C9D62461275000D1D6C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB12C9D82461275000D1D6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchViewController.swift; sourceTree = "<group>"; };
 		EB1D38B3246138C10025F9DC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		EB3784E5247FA72D0002DF9B /* WorldMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMD.swift; sourceTree = "<group>"; };
 		EB64158824613FF700AA3F14 /* MainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
 		EB80B4E92477D29A0054D7B7 /* TimerMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMD.swift; sourceTree = "<group>"; };
-		EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramTableViewCell.swift; sourceTree = "<group>"; };
 		EBCC38342462CB7000F30360 /* stopWatchMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopWatchMD.swift; sourceTree = "<group>"; };
+		EBD6D24A2480E9A000380EF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EBD6D2532480FCE600380EF4 /* NameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameTableViewCell.swift; path = ../../../Alram/Alram/Cell/NameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1D38B1246138B00025F9DC /* stopWatchViewController.swift */,
-				EB12C9DE24612A6400D1D6C7 /* MainTableViewController.swift */,
+				EBD6D24A2480E9A000380EF4 /* MainViewController.swift */,
 				EB64158824613FF700AA3F14 /* MainDetailViewController.swift */,
 				EB1D38B3246138C10025F9DC /* TimerViewController.swift */,
 			);
@@ -99,8 +99,8 @@
 		EB1D38B624613A1F0025F9DC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EBD6D2532480FCE600380EF4 /* NameTableViewCell.swift */,
 				EB1D38AD24612F6B0025F9DC /* MainTableViewCell.swift */,
-				EBA7CF88246404C7008CEED7 /* AlramTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -189,8 +189,8 @@
 				EB80B4EA2477D29A0054D7B7 /* TimerMD.swift in Sources */,
 				EB64158924613FF700AA3F14 /* MainDetailViewController.swift in Sources */,
 				EB12C9CB2461274D00D1D6C7 /* AppDelegate.swift in Sources */,
-				EB12C9DF24612A6400D1D6C7 /* MainTableViewController.swift in Sources */,
-				EBA7CF89246404C7008CEED7 /* AlramTableViewCell.swift in Sources */,
+				EBD6D2552480FCE600380EF4 /* NameTableViewCell.swift in Sources */,
+				EBD6D24B2480E9A000380EF4 /* MainViewController.swift in Sources */,
 				EB1D38AE24612F6B0025F9DC /* MainTableViewCell.swift in Sources */,
 				EB3784E6247FA72D0002DF9B /* WorldMD.swift in Sources */,
 				EB1D38B4246138C10025F9DC /* TimerViewController.swift in Sources */,

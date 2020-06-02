@@ -32,7 +32,6 @@ class AlramTableViewController: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         saveUserdefault()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

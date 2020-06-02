@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MainDetailViewController: UIViewController {
-    var structWorld: WorldMD = WorldMD()
+var arrayCount: Int = 0
 
+class MainDetailViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,9 +19,7 @@ class MainDetailViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
-        tableView.reloadData()
     }
-    
 }
 
 extension MainDetailViewController: UITableViewDelegate, UITableViewDataSource{
@@ -38,9 +37,18 @@ extension MainDetailViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        structWorld.numberOfWorld = indexPath.row
-        structWorld.worldName = TimeZone.knownTimeZoneIdentifiers[structWorld.numberOfWorld]
-        structWorld.isSelected = true
+        print(indexPath.row)
+        
+        let worldClock = TimeZone.knownTimeZoneIdentifiers[indexPath.row]
+        
+        let date = DateFormatter()
+        date.locale = Locale(identifier: worldClock)
+        date.timeZone = TimeZone(identifier: worldClock)
+        date.dateFormat = "HH:mm"
+        
+        structWorld.append(WorldMD(worldNam: TimeZone.knownTimeZoneIdentifiers[indexPath.row], worldClock: date.string(from: Date())))
+    
+        
         self.navigationController?.popViewController(animated: true)
     }
 }

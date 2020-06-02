@@ -28,6 +28,7 @@ class TimerViewController: UIViewController {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.dateFormat = "HH:mm:ss"
+        
         structTime.counter = Int(sender.countDownDuration)
         self.showTime.text = dateFormatter.string(from: sender.date)
     }
