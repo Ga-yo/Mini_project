@@ -8,8 +8,6 @@
 
 import UIKit
 
-var arrayCount: Int = 0
-
 class MainDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!

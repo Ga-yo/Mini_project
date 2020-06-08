@@ -12,8 +12,6 @@ var structWorld: [WorldMD] = []
 
 class MainViewController: UIViewController {
         
-    
-        
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var plusCell: UIBarButtonItem!
     @IBOutlet weak var editCell: UIBarButtonItem!
@@ -50,9 +48,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "worldCell", for: indexPath)
-        
-        print("arrayCount \(arrayCount)")
-        print("indexpath \(indexPath.row)")
         
         cell.textLabel?.text = structWorld[indexPath.row].worldClock
         cell.detailTextLabel?.text = structWorld[indexPath.row].worldName
