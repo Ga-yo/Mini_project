@@ -11,6 +11,9 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signIn: UIButton!
     let remoteConfig = RemoteConfig.remoteConfig()
@@ -32,9 +35,25 @@ class LoginViewController: UIViewController {
         loginButton?.backgroundColor = UIColor(hexString: color)
         signIn?.backgroundColor = UIColor(hexString: color)
         
+        signIn.addTarget(self, action: #selector(presentSignUp), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
     }
     
+    @objc func loginEvent(){
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, err) in
+            if err != nil {
+                let alert = UIAlertController(title: "에러", message: err.debugDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                self.present(alert, animated: true ,completion: nil)
+            }
+        }
+    }
 
+    @objc func presentSignUp(){
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignUpViewController
+        
+        self.present(view, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
