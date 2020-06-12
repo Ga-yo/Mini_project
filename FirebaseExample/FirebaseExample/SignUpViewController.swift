@@ -34,13 +34,15 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                color = remoteConfig["splash_background"].stringValue
         statusBar.backgroundColor = UIColor(hexString: color!)
         
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
+        imageView?.isUserInteractionEnabled = true
+        
+        imageView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
         signup.backgroundColor = UIColor(hexString: color!)
         cancel.backgroundColor = UIColor(hexString: color!)
         
         signup.addTarget(self, action: #selector(signupEvent), for: .touchUpInside)
         cancel.addTarget(self, action: #selector(cancelevent), for: .touchUpInside)
+        
     }
     
     @objc func imagePicker(){
@@ -57,16 +59,24 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         
         self.dismiss(animated: true, completion: nil)
     }
+    
     @objc func signupEvent() {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) {(user, err) in
-            let uid = Auth.auth().currentUser?.uid
-            
-            let image = self.imageView.image!.jpegData(compressionQuality: 0.1)
-            
-            Storage.storage().reference().child("userImages").child(uid!).putData(image!, metadata: nil, completion: { (data, error) in
-                let imageURL = storageref.downloadURL()
-                Database.database().reference().child("users").child(uid!).setValue(["name": self.name.text!, "profile": imageURL])
+            let uid = user?.user.uid
+            let image = self.imageView.image?.jpegData(compressionQuality: 0.1)
+
+            let imageRef = Storage.storage().reference().child("userImages").child(uid!)
+
+            imageRef.putData(image!, metadata: nil, completion: {(StorageMetadata, Error) in
+
+                imageRef.downloadURL(completion: { (url, err) in
+
+                    Database.database().reference().child("user").child(uid!).setValue(["name":self.name.text,"profileImageUrl":url?.absoluteString])
+
+                })
+
             })
+            
             
         }
     }

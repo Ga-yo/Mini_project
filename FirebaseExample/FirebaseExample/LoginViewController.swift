@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        try! Auth.auth().signOut()
         let statusBar = UIView()
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints { (m) in
@@ -37,6 +38,14 @@ class LoginViewController: UIViewController {
         
         signIn.addTarget(self, action: #selector(presentSignUp), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if(user != nil){
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                
+                self.present(view, animated: true, completion: nil)
+            }
+        }
     }
     
     @objc func loginEvent(){

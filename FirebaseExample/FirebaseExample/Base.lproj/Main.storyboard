@@ -242,6 +242,7 @@
                     <connections>
                         <outlet property="cancel" destination="Epe-Mp-WgO" id="RF4-kB-v3D"/>
                         <outlet property="email" destination="rsV-1j-i7c" id="vBE-hn-rtY"/>
+                        <outlet property="imageView" destination="wSM-6e-NdW" id="Vk1-Df-ASd"/>
                         <outlet property="name" destination="0en-BF-Ryo" id="zBU-o9-jTe"/>
                         <outlet property="password" destination="g1N-ek-mHx" id="bco-vj-yX6"/>
                         <outlet property="signup" destination="REQ-EA-S33" id="mbe-ng-S5N"/>
