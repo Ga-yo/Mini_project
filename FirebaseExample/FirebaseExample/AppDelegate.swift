@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 
+var ref: DatabaseReference = Database.database().reference()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

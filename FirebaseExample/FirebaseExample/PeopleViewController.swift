@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Firebase
+import SnapKit
 
-class MainViewController: UIViewController {
+class PeopleViewController: UIViewController {
 
+    var arrayModel: [UserModel] = []
+    var tableview: UITableView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableview = UITableView()
+        tableview.delegate = self
+        tableview.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     

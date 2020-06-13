@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		DD1D229D5DDD942D101C2573 /* Pods_FirebaseExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CD77C230A1B946FE647E20 /* Pods_FirebaseExample.framework */; };
 		EB4C95C72490D062006F0439 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB4C95C62490D062006F0439 /* RemoteConfigDefaults.plist */; };
-		EB5DDA3524921ED70015B682 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DDA3424921ED70015B682 /* MainViewController.swift */; };
+		EB5DDA3524921ED70015B682 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DDA3424921ED70015B682 /* PeopleViewController.swift */; };
+		EB6DB3D6249513AF00E85D8B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6DB3D5249513AF00E85D8B /* UserModel.swift */; };
 		EB89B5412490E466002D0E4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89B5402490E466002D0E4C /* LoginViewController.swift */; };
 		EB89B5432490ECA8002D0E4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB89B5422490ECA8002D0E4C /* GoogleService-Info.plist */; };
 		EB89B5452490ED70002D0E4C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89B5442490ED70002D0E4C /* SignUpViewController.swift */; };
@@ -26,7 +27,8 @@
 		5952674723A1A6695F5E6D10 /* Pods-FirebaseExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseExample.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseExample/Pods-FirebaseExample.debug.xcconfig"; sourceTree = "<group>"; };
 		7388008B27A48CC1057F671E /* Pods-FirebaseExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseExample.release.xcconfig"; path = "Target Support Files/Pods-FirebaseExample/Pods-FirebaseExample.release.xcconfig"; sourceTree = "<group>"; };
 		EB4C95C62490D062006F0439 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
-		EB5DDA3424921ED70015B682 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EB5DDA3424921ED70015B682 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		EB6DB3D5249513AF00E85D8B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		EB89B5402490E466002D0E4C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EB89B5422490ECA8002D0E4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB89B5442490ED70002D0E4C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -95,9 +97,10 @@
 				EBE2EC8E2490C7CF006227AB /* ViewController.swift */,
 				EB89B5402490E466002D0E4C /* LoginViewController.swift */,
 				EB89B5442490ED70002D0E4C /* SignUpViewController.swift */,
+				EB6DB3D5249513AF00E85D8B /* UserModel.swift */,
 				EB4C95C62490D062006F0439 /* RemoteConfigDefaults.plist */,
 				EBE2EC902490C7CF006227AB /* Main.storyboard */,
-				EB5DDA3424921ED70015B682 /* MainViewController.swift */,
+				EB5DDA3424921ED70015B682 /* PeopleViewController.swift */,
 				EBE2EC932490C7D3006227AB /* Assets.xcassets */,
 				EB89B5422490ECA8002D0E4C /* GoogleService-Info.plist */,
 				EBE2EC952490C7D3006227AB /* LaunchScreen.storyboard */,
@@ -224,9 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB89B5412490E466002D0E4C /* LoginViewController.swift in Sources */,
+				EB6DB3D6249513AF00E85D8B /* UserModel.swift in Sources */,
 				EBE2EC8F2490C7CF006227AB /* ViewController.swift in Sources */,
 				EBE2EC8B2490C7CF006227AB /* AppDelegate.swift in Sources */,
-				EB5DDA3524921ED70015B682 /* MainViewController.swift in Sources */,
+				EB5DDA3524921ED70015B682 /* PeopleViewController.swift in Sources */,
 				EBE2EC8D2490C7CF006227AB /* SceneDelegate.swift in Sources */,
 				EB89B5452490ED70002D0E4C /* SignUpViewController.swift in Sources */,
 			);
