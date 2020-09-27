@@ -34,7 +34,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let data = userDefaults.object(forKey: "items") as? [[String: AnyObject]] else {
                 return
             }
-     
             print(data.description)
      
             // list 배열에 저장하기

@@ -75,7 +75,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.textLabel?.text = section3[indexPath.row]
             cell.textLabel?.textColor = .red
             cell.accessoryType = .none
-            
         }
         
         

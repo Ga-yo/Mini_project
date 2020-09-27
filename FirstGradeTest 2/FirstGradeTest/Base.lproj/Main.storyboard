@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirstGradeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="노래 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-hN-dlU">
+                                <rect key="frame" x="268" y="184" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="가수(선택사항)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-JV-s46">
+                                <rect key="frame" x="250" y="215" width="100.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="야너두" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-Ox-K1B">
+                                <rect key="frame" x="140" y="270" width="320" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="a7v-zc-Fhe"/>
+                                    <constraint firstAttribute="width" constant="320" id="uKC-yb-hi8"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0ob-AY-3D7">
+                                <rect key="frame" x="58" y="582" width="484" height="31"/>
+                                <color key="minimumTrackTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="IFe-gF-4cm"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C36-bS-16Y">
+                                <rect key="frame" x="494" y="350" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57182480319999995" green="0.76586787560000003" blue="0.67794972899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHk-4x-zO2">
+                                <rect key="frame" x="277" y="422" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="6Ye-CI-TvH"/>
+                                    <constraint firstAttribute="width" constant="46" id="hvP-ag-A8M"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="button_play"/>
+                                <state key="selected" image="button_pause"/>
+                                <connections>
+                                    <action selector="touchUpPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yAL-tX-SXy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C36-bS-16Y" firstAttribute="trailing" secondItem="0ob-AY-3D7" secondAttribute="trailing" id="2EE-JK-9K0"/>
+                            <constraint firstItem="BHk-4x-zO2" firstAttribute="top" secondItem="0ob-AY-3D7" secondAttribute="bottom" constant="72" id="37T-Ey-bbT"/>
+                            <constraint firstItem="6aV-JV-s46" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9aZ-NV-1NS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BHk-4x-zO2" secondAttribute="bottom" constant="132" id="DiC-09-BW0"/>
+                            <constraint firstItem="6hx-hN-dlU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gyn-Tr-TeK"/>
+                            <constraint firstItem="BHk-4x-zO2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PGO-NG-dAg"/>
+                            <constraint firstItem="C36-bS-16Y" firstAttribute="top" secondItem="0ob-AY-3D7" secondAttribute="bottom" id="UFy-WT-afj"/>
+                            <constraint firstItem="0ob-AY-3D7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="V7B-6d-3E9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0ob-AY-3D7" secondAttribute="trailing" constant="60" id="VJv-h4-Bep"/>
+                            <constraint firstItem="8u3-Ox-K1B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="byc-XS-5SB"/>
+                            <constraint firstItem="6hx-hN-dlU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="gt8-Ky-bLE"/>
+                            <constraint firstItem="8u3-Ox-K1B" firstAttribute="top" secondItem="6aV-JV-s46" secondAttribute="bottom" constant="34" id="kPj-dN-FD0"/>
+                            <constraint firstItem="6aV-JV-s46" firstAttribute="top" secondItem="6hx-hN-dlU" secondAttribute="bottom" constant="10" id="obE-Fc-5Ha"/>
+                            <constraint firstItem="0ob-AY-3D7" firstAttribute="top" secondItem="8u3-Ox-K1B" secondAttribute="bottom" constant="72" id="trG-VU-oWH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumCoverImageView" destination="8u3-Ox-K1B" id="gcK-Cr-oKj"/>
+                        <outlet property="playPauseButton" destination="BHk-4x-zO2" id="GWd-5c-Pwp"/>
+                        <outlet property="progcessSlider" destination="0ob-AY-3D7" id="DjS-wF-8dn"/>
+                        <outlet property="songNameLabel" destination="6hx-hN-dlU" id="Fou-f9-CVv"/>
+                        <outlet property="timeLabel" destination="C36-bS-16Y" id="LoH-rm-8du"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_pause" width="512" height="512"/>
+        <image name="button_play" width="512" height="512"/>
+        <image name="야너두" width="683" height="512"/>
+    </resources>
+</document>

@@ -118,8 +118,6 @@ class ViewController: UIViewController ,UITableViewDataSource, UITableViewDelega
         
         doneButton.style = .plain
         doneButton.target = self
-        
-        
 
     }
 
