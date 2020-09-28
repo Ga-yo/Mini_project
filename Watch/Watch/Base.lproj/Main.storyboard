@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7oR-p8-awq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7oR-p8-awq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FwH-7e-ucr">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ojq-aD-uau">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,7 +32,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="worldCell" textLabel="NWA-Jg-NeH" detailTextLabel="5sW-ey-btU" style="IBUITableViewCellStyleValue1" id="J8R-oo-GYT">
@@ -41,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NWA-Jg-NeH">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="12" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -60,14 +62,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Jmk-Db-XiE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jmk-Db-XiE" firstAttribute="bottom" secondItem="FwH-7e-ucr" secondAttribute="bottom" id="NaG-ao-Ghu"/>
                             <constraint firstItem="Jmk-Db-XiE" firstAttribute="trailing" secondItem="FwH-7e-ucr" secondAttribute="trailing" id="d2C-RZ-5fb"/>
                             <constraint firstItem="FwH-7e-ucr" firstAttribute="top" secondItem="Jmk-Db-XiE" secondAttribute="top" id="fMb-GK-Up2"/>
                             <constraint firstItem="FwH-7e-ucr" firstAttribute="leading" secondItem="Jmk-Db-XiE" secondAttribute="leading" id="ktQ-Lp-Qhe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jmk-Db-XiE"/>
                     </view>
                     <navigationItem key="navigationItem" id="zQQ-I3-udt">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="qfX-m6-tgQ"/>
@@ -85,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k9-JB-byB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="94"/>
+            <point key="canvasLocation" x="2612" y="530"/>
         </scene>
         <!--Main Detail View Controller-->
         <scene sceneID="NPV-G0-3Kd">
@@ -97,7 +99,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-m2-bZe">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="worldArray" id="ULX-8W-i9l">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -110,14 +112,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Fvh-K4-cLY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fvh-K4-cLY" firstAttribute="trailing" secondItem="S3R-m2-bZe" secondAttribute="trailing" id="CQB-3x-OT9"/>
                             <constraint firstItem="Fvh-K4-cLY" firstAttribute="bottom" secondItem="S3R-m2-bZe" secondAttribute="bottom" id="mIc-d8-aqn"/>
                             <constraint firstItem="S3R-m2-bZe" firstAttribute="top" secondItem="Fvh-K4-cLY" secondAttribute="top" id="sUY-JZ-NdM"/>
                             <constraint firstItem="S3R-m2-bZe" firstAttribute="leading" secondItem="Fvh-K4-cLY" secondAttribute="leading" id="xmD-3D-lQC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Fvh-K4-cLY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3k1-4O-FVF"/>
                     <connections>
@@ -126,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98n-Gh-IBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3339" y="94"/>
+            <point key="canvasLocation" x="3391" y="530"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="52q-QB-gp1">
@@ -162,7 +164,7 @@
                                     <action selector="chooseTime:" destination="RYe-dN-gbh" eventType="valueChanged" id="dAV-c7-C2u"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-xf-qM0">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-xf-qM0">
                                 <rect key="frame" x="301" y="350" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="시작"/>
@@ -170,7 +172,7 @@
                                     <action selector="startTime:" destination="RYe-dN-gbh" eventType="touchUpInside" id="4mu-he-oPs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-UI-44U">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-UI-44U">
                                 <rect key="frame" x="50" y="350" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="취소"/>
@@ -188,7 +190,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rD0-2i-8m4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rD0-2i-8m4" firstAttribute="trailing" secondItem="5J4-Fo-vle" secondAttribute="trailing" id="CM2-XT-oe3"/>
                             <constraint firstItem="5J4-Fo-vle" firstAttribute="top" secondItem="rD0-2i-8m4" secondAttribute="top" constant="40" id="PJZ-bh-IHQ"/>
@@ -197,7 +200,6 @@
                             <constraint firstItem="rD0-2i-8m4" firstAttribute="bottom" secondItem="swk-Jg-UuR" secondAttribute="bottom" constant="110" id="oUU-7T-xLM"/>
                             <constraint firstItem="swk-Jg-UuR" firstAttribute="leading" secondItem="rD0-2i-8m4" secondAttribute="leading" constant="70" id="qL9-tZ-uAS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rD0-2i-8m4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TImer" image="timer" catalog="system" id="OFl-hW-ztn"/>
                     <connections>
@@ -225,14 +227,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-hM-7f9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-hM-7f9">
                                 <rect key="frame" x="336" y="388" width="30" height="30"/>
                                 <state key="normal" title="시작"/>
                                 <connections>
                                     <action selector="pressStart:" destination="1cE-QD-oqk" eventType="touchUpInside" id="1rb-SH-u9H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO9-zK-xUN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO9-zK-xUN">
                                 <rect key="frame" x="51" y="388" width="30" height="30"/>
                                 <state key="normal" title="랩"/>
                                 <connections>
@@ -241,7 +243,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-rV-Kxl">
                                 <rect key="frame" x="0.0" y="472" width="414" height="341"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="341" id="AIQ-b7-tNO"/>
                                 </constraints>
@@ -257,7 +259,8 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="B2X-Wg-mmN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NvX-rV-Kxl" firstAttribute="leading" secondItem="B2X-Wg-mmN" secondAttribute="leading" id="4L1-9K-KSP"/>
                             <constraint firstItem="WO9-zK-xUN" firstAttribute="leading" secondItem="B2X-Wg-mmN" secondAttribute="leading" constant="51" id="EXQ-Y5-XUD"/>
@@ -271,7 +274,6 @@
                             <constraint firstItem="B2X-Wg-mmN" firstAttribute="trailing" secondItem="u2f-hM-7f9" secondAttribute="trailing" constant="48" id="ufc-zr-bAm"/>
                             <constraint firstItem="B2X-Wg-mmN" firstAttribute="bottom" secondItem="NvX-rV-Kxl" secondAttribute="bottom" id="zNY-Te-fYZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="B2X-Wg-mmN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="StopWatch" image="stopwatch" catalog="system" id="166-er-MWm"/>
                     <connections>
@@ -302,12 +304,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGO-69-1Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1723" y="94"/>
+            <point key="canvasLocation" x="1775" y="530"/>
         </scene>
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="stopwatch" catalog="system" width="121" height="128"/>
         <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
